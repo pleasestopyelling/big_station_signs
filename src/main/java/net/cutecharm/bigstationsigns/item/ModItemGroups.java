@@ -1,6 +1,7 @@
 package net.cutecharm.bigstationsigns.item;
 
 import net.cutecharm.bigstationsigns.BigStationSigns;
+import net.cutecharm.bigstationsigns.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -11,8 +12,12 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
 
-    public static final ItemGroup SMALL_STATION_SIGNS = Registry.register(Registries.ITEM_GROUP, new Identifier(BigStationSigns.MOD_ID, "smallstationsigns"),
-    FabricItemGroup.builder().displayName(Text.translatable("itemgroup.smallstationsigns")).icon(() -> new ItemStack(ModItems.GRAY_SIGN)).entries((displayContext, entries) -> {
+    public static final ItemGroup SMALL_STATION_SIGNS = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(BigStationSigns.MOD_ID, "smallstationsigns"),
+    FabricItemGroup.builder()
+            .displayName(Text.translatable("itemgroup.smallstationsigns"))
+            .icon(() -> new ItemStack(ModItems.GRAY_SIGN))
+            .entries((displayContext, entries) -> {
         //Small station signs go here (basically all the terraform signs)
         entries.add(ModItems.GRAY_SIGN);
         entries.add(ModItems.HANGING_GRAY_SIGN);
@@ -63,6 +68,17 @@ public class ModItemGroups {
         entries.add(ModItems.YELLOW_SIGN_B);
         entries.add(ModItems.HANGING_YELLOW_SIGN);
     }).build());
+
+    public static final ItemGroup BIG_STATION_SIGNS = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(BigStationSigns.MOD_ID, "bigstationsigns"),
+            FabricItemGroup.builder()
+                    .displayName(Text.translatable("itemgroup.bigstationsigns"))
+                    .icon(() -> new ItemStack(ModBlocks.GRAY_BIG_STATION_SIGN))
+                    .entries((displayContext, entries) -> {
+
+                        entries.add(ModBlocks.GRAY_BIG_STATION_SIGN);
+
+                    }).build());
 
     public static void registerItemGroups() {
         BigStationSigns.LOGGER.info("Registering Item Groups for" + BigStationSigns.MOD_ID);

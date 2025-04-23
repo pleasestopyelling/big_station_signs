@@ -111,6 +111,7 @@ public class ModItems {
             new HangingSignItem(ModBlocks.HANGING_YELLOW_SIGN, ModBlocks.WALL_HANGING_YELLOW_SIGN, new FabricItemSettings().maxCount(16) ));
 
 
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(BigStationSigns.MOD_ID, name), item);
     }

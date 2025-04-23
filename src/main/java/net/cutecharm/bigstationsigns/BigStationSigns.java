@@ -1,6 +1,7 @@
 package net.cutecharm.bigstationsigns;
 
 import net.cutecharm.bigstationsigns.block.ModBlocks;
+import net.cutecharm.bigstationsigns.block.entity.ModBlockEntities;
 import net.cutecharm.bigstationsigns.item.ModItemGroups;
 import net.cutecharm.bigstationsigns.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -24,6 +25,7 @@ public class BigStationSigns implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModBlockEntities.registerBlockEntities();
 		LOGGER.info("Hello Fabric world!");
 	}
 }

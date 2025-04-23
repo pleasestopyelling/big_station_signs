@@ -96,5 +96,8 @@
   "block.big-station-signs.yellow_hanging_sign": "Hanging Station Sign (Merseyrail)",
   "block.big-station-signs.yellow_wall_hanging_sign": "Wall Hanging Station Sign (Merseyrail)",
 
-  "itemgroup.smallstationsigns": "Small Station Signs"
+  "block.big-station-signs.gray_big_sign": "Big Station Sign (Avanti West Coast)",
+
+  "itemgroup.smallstationsigns": "Small Station Signs",
+  "itemgroup.bigstationsigns": "Big Station Signs"
 }
