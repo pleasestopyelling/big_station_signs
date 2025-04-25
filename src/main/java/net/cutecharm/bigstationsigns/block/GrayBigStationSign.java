@@ -1,16 +1,26 @@
 package net.cutecharm.bigstationsigns.block;
 
+import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.cutecharm.bigstationsigns.block.entity.BigStationSignBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.BlockRotation;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEntityProvider {
@@ -31,6 +41,16 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
         return BlockRenderType.MODEL;
     }
 
+    public Direction rotation(BlockState state) {
+        return state.get(FACING);
+    }
+
+    //public BlockState rotate(BlockState state, BlockRotation rotation) {
+    //    return (BlockState)state.with(ROTATION, rotation.rotate((Integer)state.get(ROTATION), MAX_ROTATIONS));
+    //}
+
+
+    //selection outline of the block (it is non collidable)
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction direction = state.get(FACING);
@@ -41,6 +61,19 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
             case WEST -> Block.createCuboidShape(15,1,0,16,15,16);
             default -> VoxelShapes.fullCube();
         };
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        return ActionResult.SUCCESS;
+    }
+
+    @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
+        super.onPlaced(world, pos, state, placer, itemStack);
+        BigStationSignBlockEntity blockEntity = (BigStationSignBlockEntity) world.getBlockEntity(pos);
+        blockEntity.facing = placer.getHorizontalFacing().getOpposite();
+        BigStationSigns.LOGGER.info("Placed in the " + blockEntity.facing);
     }
 
     @Override
@@ -55,7 +88,5 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
     }
 
     //Opens gui
-
-
 
 }

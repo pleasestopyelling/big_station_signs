@@ -122,5 +122,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WALL_CYAN_SIGN_D);
         addDrop(ModBlocks.WALL_HANGING_CYAN_SIGN);
 
+        addDrop(ModBlocks.GRAY_BIG_STATION_SIGN);
+
     }
 }

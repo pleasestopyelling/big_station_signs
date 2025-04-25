@@ -18,6 +18,9 @@
 		"main": [
 			"net.cutecharm.bigstationsigns.BigStationSigns"
 		],
+		"client": [
+			"net.cutecharm.bigstationsigns.BigStationSignsClient"
+		],
 		"fabric-datagen": [
 			"net.cutecharm.bigstationsigns.BigStationSignsDataGenerator"
 		]

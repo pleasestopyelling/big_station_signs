@@ -126,7 +126,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.WALL_CYAN_SIGN_B)
                 .add(ModBlocks.WALL_CYAN_SIGN_C)
                 .add(ModBlocks.WALL_CYAN_SIGN_D)
-                .add(ModBlocks.WALL_HANGING_CYAN_SIGN);
+                .add(ModBlocks.WALL_HANGING_CYAN_SIGN)
+
+                .add(ModBlocks.GRAY_BIG_STATION_SIGN);
 
     }
 }
