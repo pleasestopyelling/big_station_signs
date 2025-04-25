@@ -1,6 +1,5 @@
 package net.cutecharm.bigstationsigns.block;
 
-import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.cutecharm.bigstationsigns.block.entity.BigStationSignBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -62,6 +61,8 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
         super.onPlaced(world, pos, state, placer, itemStack);
         BigStationSignBlockEntity blockEntity = (BigStationSignBlockEntity) world.getBlockEntity(pos);
         blockEntity.facing = placer.getHorizontalFacing().getOpposite();
+        blockEntity.markDirty();
+
     }
 
     @Override

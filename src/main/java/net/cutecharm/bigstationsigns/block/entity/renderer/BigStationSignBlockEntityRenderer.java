@@ -61,7 +61,7 @@ public class BigStationSignBlockEntityRenderer implements BlockEntityRenderer<Bi
         matrices.scale(1/18f, 1/18f, 1/18f);
 
         //get the message to display
-        String text = testmessage;
+        String text = entity.signMessage;
         //pull up the text renderer
         TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
         //get the width of the message to center it
