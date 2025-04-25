@@ -153,9 +153,9 @@ public class ModBlocks {
     public static final Block WALL_HANGING_LIGHT_GRAY_SIGN = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "light_gray_wall_hanging_sign"),
             new TerraformWallHangingSignBlock(SmallSignTextureHelper.LIGHT_GRAY_HANGING_SIGN_TEXTURE, SmallSignTextureHelper.LIGHT_GRAY_HANGING_GUI_SIGN_TEXTURE,FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(HANGING_LIGHT_GRAY_SIGN).noCollision().noBlockBreakParticles()));
     public static final Block STANDING_BLACK_SIGN = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "black_standing_sign"),
-            new TerraformSignBlock(SmallSignTextureHelper.BLACK_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN)));
+            new TerraformSignBlock(SmallSignTextureHelper.BLACK_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noCollision().noBlockBreakParticles()));
     public static final Block WALL_BLACK_SIGN = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "black_wall_sign"),
-            new TerraformWallSignBlock(SmallSignTextureHelper.BLACK_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(STANDING_BLACK_SIGN)));
+            new TerraformWallSignBlock(SmallSignTextureHelper.BLACK_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(STANDING_BLACK_SIGN).noCollision().noBlockBreakParticles()));
     public static final Block STANDING_BLACK_SIGN_B = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "black_standing_sign_b"),
             new TerraformSignBlock(SmallSignTextureHelper.BLACK_SIGN_TEXTURE_B, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noCollision().noBlockBreakParticles()));
     public static final Block WALL_BLACK_SIGN_B = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "black_wall_sign_b"),
@@ -215,7 +215,7 @@ public class ModBlocks {
 
     //big signs
     public static final Block GRAY_BIG_STATION_SIGN = registerBlock("gray_big_sign",
-            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noCollision().noBlockBreakParticles().nonOpaque()));
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
 
 
     private static Block registerBlock(String name, Block block) {

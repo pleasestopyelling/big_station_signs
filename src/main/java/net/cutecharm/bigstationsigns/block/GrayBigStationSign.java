@@ -9,10 +9,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -41,24 +39,15 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
         return BlockRenderType.MODEL;
     }
 
-    public Direction rotation(BlockState state) {
-        return state.get(FACING);
-    }
-
-    //public BlockState rotate(BlockState state, BlockRotation rotation) {
-    //    return (BlockState)state.with(ROTATION, rotation.rotate((Integer)state.get(ROTATION), MAX_ROTATIONS));
-    //}
-
-
     //selection outline of the block (it is non collidable)
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction direction = state.get(FACING);
         return switch(direction) {
-            case NORTH -> Block.createCuboidShape(0,1,15,16,15,16);
-            case EAST -> Block.createCuboidShape(0,1,0,1,15,16);
-            case SOUTH -> Block.createCuboidShape(0,1,0,16,15,1);
-            case WEST -> Block.createCuboidShape(15,1,0,16,15,16);
+            case NORTH -> Block.createCuboidShape(0,1,14,16,15,16);
+            case EAST -> Block.createCuboidShape(0,1,0,2,15,16);
+            case SOUTH -> Block.createCuboidShape(0,1,0,16,15,2);
+            case WEST -> Block.createCuboidShape(14,1,0,16,15,16);
             default -> VoxelShapes.fullCube();
         };
     }
@@ -73,7 +62,6 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
         super.onPlaced(world, pos, state, placer, itemStack);
         BigStationSignBlockEntity blockEntity = (BigStationSignBlockEntity) world.getBlockEntity(pos);
         blockEntity.facing = placer.getHorizontalFacing().getOpposite();
-        BigStationSigns.LOGGER.info("Placed in the " + blockEntity.facing);
     }
 
     @Override

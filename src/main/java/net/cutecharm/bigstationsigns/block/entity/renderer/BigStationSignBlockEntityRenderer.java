@@ -34,24 +34,26 @@ public class BigStationSignBlockEntityRenderer implements BlockEntityRenderer<Bi
         matrices.push();
         Direction renderDirection = entity.getDirection();
 
+        //rotate and position text based on direction
+        //text renders 0.0005 of a block outward to avoid zfighting
         switch (renderDirection) {
             case NORTH -> {
-                matrices.translate(0.5f, 1f, 0.937f);
+                matrices.translate(0.5f, 1f, 0.8745f);
             }
             case SOUTH -> {
-                matrices.translate(0.5f, 1f, 0.063f);
+                matrices.translate(0.5f, 1f, 0.1255f);
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180));
             }
             case EAST -> {
-                matrices.translate(0.063f, 1f, 0.5f);
+                matrices.translate(0.1255f, 1f, 0.5f);
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(270));
             }
             case WEST -> {
-                matrices.translate(0.937f, 1f, 0.5f);
+                matrices.translate(0.8745f, 1f, 0.5f);
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90));
             }
             default ->
-                matrices.translate(0.5f, 1f, 0.937f);
+                matrices.translate(0.5f, 1f, 0.8745f);
         }
 
         //flip text and scale it
