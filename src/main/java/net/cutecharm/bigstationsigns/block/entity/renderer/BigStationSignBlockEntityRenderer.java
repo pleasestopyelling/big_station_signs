@@ -32,36 +32,31 @@ public class BigStationSignBlockEntityRenderer implements BlockEntityRenderer<Bi
     @Override
     public void render(BigStationSignBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         matrices.push();
-        //put the text in place
-        matrices.translate(0.5f, 1f, 0.937f);
-        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
         Direction renderDirection = entity.getDirection();
-        if (renderDirection == Direction.EAST) {
-            matrices.translate(0.437f, 0f, -0.437f);
-            matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90));
-        } else if (renderDirection == Direction.WEST) {
-            matrices.translate(-0.437f, 0f, -0.437f);
-            matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(270));
-        } else if (renderDirection == Direction.SOUTH) {
-            matrices.translate(0f, 0f, -0.874f);
-            matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180));
-        }
-        matrices.scale(1/18f, 1/18f, 1/18f);
 
-        //switch (renderDirection) {
-        //    case EAST -> {
-        //        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90));
-        //    }
-        //    case SOUTH -> {
-        //        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180));
-        //    }
-        //    case WEST -> {
-        //       matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(270));
-        //    }
-        //    default -> {
-        //        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(0));
-        //    }
-        //}
+        switch (renderDirection) {
+            case NORTH -> {
+                matrices.translate(0.5f, 1f, 0.937f);
+            }
+            case SOUTH -> {
+                matrices.translate(0.5f, 1f, 0.063f);
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180));
+            }
+            case EAST -> {
+                matrices.translate(0.063f, 1f, 0.5f);
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(270));
+            }
+            case WEST -> {
+                matrices.translate(0.937f, 1f, 0.5f);
+                matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90));
+            }
+            default ->
+                matrices.translate(0.5f, 1f, 0.937f);
+        }
+
+        //flip text and scale it
+        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
+        matrices.scale(1/18f, 1/18f, 1/18f);
 
         //get the message to display
         String text = testmessage;
