@@ -13,7 +13,7 @@ public class ModBlockEntities {
             Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(BigStationSigns.MOD_ID, "bss_be"),
                     FabricBlockEntityTypeBuilder.create(BigStationSignBlockEntity::new, ModBlocks.GRAY_BIG_STATION_SIGN).build());
     public static void registerBlockEntities() {
-        BigStationSigns.LOGGER.info("Registering Block Entities for" + BigStationSigns.MOD_ID);
+        BigStationSigns.LOGGER.info("Registering Block Entities for " + BigStationSigns.MOD_ID);
     }
 }
 

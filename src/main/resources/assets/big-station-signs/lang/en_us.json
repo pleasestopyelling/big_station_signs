@@ -99,5 +99,28 @@
   "block.big-station-signs.gray_big_sign": "Big Station Sign (Avanti West Coast)",
 
   "itemgroup.smallstationsigns": "Small Station Signs",
-  "itemgroup.bigstationsigns": "Big Station Signs"
+  "itemgroup.bigstationsigns": "Big Station Signs",
+
+  "screentext.screen_title": "Big Station Sign Editor",
+  "screentext.current_color": "Current Color:",
+  "screentext.button_white": "White",
+  "screentext.button_light_gray": "Light Gray",
+  "screentext.button_gray": "Gray",
+  "screentext.button_black": "Black",
+  "screentext.button_brown": "Brown",
+  "screentext.button_red": "Red",
+  "screentext.button_orange": "Orange",
+  "screentext.button_yellow": "Yellow",
+  "screentext.button_lime": "Lime",
+  "screentext.button_green": "Green",
+  "screentext.button_cyan": "Cyan",
+  "screentext.button_light_blue": "Light Blue",
+  "screentext.button_blue": "Blue",
+  "screentext.button_purple": "Purple",
+  "screentext.button_magenta": "Magenta",
+  "screentext.button_pink": "Pink",
+  "screentext.check_bold": "Bold",
+  "screentext.check_italic": "Italic",
+  "screentext.check_underline": "Underline",
+  "screentext.done_button": "Save and Close"
 }

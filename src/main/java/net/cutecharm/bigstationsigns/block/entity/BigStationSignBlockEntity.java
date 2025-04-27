@@ -1,6 +1,5 @@
 package net.cutecharm.bigstationsigns.block.entity;
 
-import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -34,7 +33,6 @@ public class BigStationSignBlockEntity extends BlockEntity {
             case WEST -> writeDirection = 3;
             default -> writeDirection = 0;
         }
-        BigStationSigns.LOGGER.info("direction to nbt is " + writeDirection);
         nbt.putInt("direction", writeDirection);
         nbt.putString("message", signMessage);
         super.writeNbt(nbt);
@@ -44,7 +42,6 @@ public class BigStationSignBlockEntity extends BlockEntity {
     public void readNbt(NbtCompound nbt) {
         signMessage = nbt.getString("message");
         int writeDirection = nbt.getInt("direction");
-        BigStationSigns.LOGGER.info("direction from nbt is " + writeDirection);
         if (writeDirection == 1) {
             facing = Direction.EAST;
         } else if (writeDirection == 2) {

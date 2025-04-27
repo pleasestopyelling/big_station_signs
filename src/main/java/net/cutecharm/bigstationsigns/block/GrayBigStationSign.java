@@ -1,6 +1,7 @@
 package net.cutecharm.bigstationsigns.block;
 
 import net.cutecharm.bigstationsigns.block.entity.BigStationSignBlockEntity;
+import net.cutecharm.bigstationsigns.screen.BigStationSignScreen;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
@@ -53,6 +54,13 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (!world.isClient) {
+            return ActionResult.SUCCESS;
+        }
+        if (world.getBlockEntity(pos) instanceof BigStationSignBlockEntity entity) {
+            BigStationSignScreen.openEditScreen(entity);
+
+        }
         return ActionResult.SUCCESS;
     }
 
@@ -60,7 +68,8 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         super.onPlaced(world, pos, state, placer, itemStack);
         BigStationSignBlockEntity blockEntity = (BigStationSignBlockEntity) world.getBlockEntity(pos);
-        blockEntity.facing = placer.getHorizontalFacing().getOpposite();
+        //blockEntity.facing = placer.getHorizontalFacing().getOpposite();
+        blockEntity.facing = state.get(FACING);
         blockEntity.markDirty();
 
     }

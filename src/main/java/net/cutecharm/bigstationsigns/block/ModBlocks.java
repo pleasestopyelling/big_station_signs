@@ -230,7 +230,7 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        BigStationSigns.LOGGER.info("Registering Mod Blocks for" + BigStationSigns.MOD_ID);
+        BigStationSigns.LOGGER.info("Registering Mod Blocks for " + BigStationSigns.MOD_ID);
 
     }
 }

@@ -117,7 +117,7 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        BigStationSigns.LOGGER.info("Registering Mod Items for" + BigStationSigns.MOD_ID);
+        BigStationSigns.LOGGER.info("Registering Mod Items for " + BigStationSigns.MOD_ID);
 
 
     }

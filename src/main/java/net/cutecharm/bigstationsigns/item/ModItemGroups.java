@@ -81,7 +81,7 @@ public class ModItemGroups {
                     }).build());
 
     public static void registerItemGroups() {
-        BigStationSigns.LOGGER.info("Registering Item Groups for" + BigStationSigns.MOD_ID);
+        BigStationSigns.LOGGER.info("Registering Item Groups for " + BigStationSigns.MOD_ID);
     }
 
 }
