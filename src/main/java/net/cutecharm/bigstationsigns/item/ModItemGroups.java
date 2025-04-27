@@ -73,10 +73,41 @@ public class ModItemGroups {
             new Identifier(BigStationSigns.MOD_ID, "bigstationsigns"),
             FabricItemGroup.builder()
                     .displayName(Text.translatable("itemgroup.bigstationsigns"))
-                    .icon(() -> new ItemStack(ModBlocks.GRAY_BIG_STATION_SIGN))
+                    .icon(() -> new ItemStack(ModBlocks.RED_BIG_STATION_SIGN))
                     .entries((displayContext, entries) -> {
 
+                        entries.add(ModBlocks.WHITE_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN);
                         entries.add(ModBlocks.GRAY_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.BLACK_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.BLACK_BIG_STATION_SIGN_B);
+                        entries.add(ModBlocks.BLACK_BIG_STATION_SIGN_C);
+                        entries.add(ModBlocks.BLACK_BIG_STATION_SIGN_D);
+                        entries.add(ModBlocks.BROWN_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.RED_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.ORANGE_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.ORANGE_BIG_STATION_SIGN_B);
+                        entries.add(ModBlocks.YELLOW_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.YELLOW_BIG_STATION_SIGN_B);
+                        entries.add(ModBlocks.LIME_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.LIME_BIG_STATION_SIGN_B);
+                        entries.add(ModBlocks.GREEN_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.GREEN_BIG_STATION_SIGN_B);
+                        entries.add(ModBlocks.GREEN_BIG_STATION_SIGN_C);
+                        entries.add(ModBlocks.GREEN_BIG_STATION_SIGN_D);
+                        entries.add(ModBlocks.CYAN_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.CYAN_BIG_STATION_SIGN_B);
+                        entries.add(ModBlocks.CYAN_BIG_STATION_SIGN_C);
+                        entries.add(ModBlocks.CYAN_BIG_STATION_SIGN_D);
+                        entries.add(ModBlocks.LIGHT_BLUE_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.BLUE_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.PURPLE_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.PURPLE_BIG_STATION_SIGN_B);
+                        entries.add(ModBlocks.PURPLE_BIG_STATION_SIGN_C);
+                        entries.add(ModBlocks.PURPLE_BIG_STATION_SIGN_D);
+                        entries.add(ModBlocks.MAGENTA_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.PINK_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.PINK_BIG_STATION_SIGN_B);
 
                     }).build());
 

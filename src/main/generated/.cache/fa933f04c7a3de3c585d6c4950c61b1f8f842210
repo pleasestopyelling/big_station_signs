@@ -1,3 +1,9 @@
-// 1.20.1	2025-04-23T17:40:46.934615	Big Station Signs/Recipes
+// 1.20.1	2025-04-27T17:23:41.3832374	Big Station Signs/Recipes
 13c9657d695cd52ea1174ce202f8687d96877919 data\big-station-signs\recipes\black_sign_b.json
+d0b304e70a8220989674b2d38c0f3c6b5c9666f4 data\big-station-signs\recipes\black_sign_d.json
+e91978af7e01119ca0b28fc86e5fdae86ec2b657 data\big-station-signs\advancements\recipes\decorations\black_sign_d.json
 bbdcad1c1e6e47c89c2aa4cdf7b04675c9c6ccc3 data\big-station-signs\advancements\recipes\decorations\black_sign_b.json
+fe822710e039b5cd7b9ff3cf045eb5a9b6ab278a data\big-station-signs\advancements\recipes\decorations\black_sign_c.json
+3ca4129d956045be2f442683c6e906716109cb89 data\big-station-signs\recipes\black_sign.json
+67fa6bf6ec812f5600b9d44d82a8ff3f426a1861 data\big-station-signs\advancements\recipes\decorations\black_sign.json
+cb607c40fee3f8e6731457827387f5d253d1cceb data\big-station-signs\recipes\black_sign_c.json

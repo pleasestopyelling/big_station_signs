@@ -3,36 +3,23 @@ package net.cutecharm.bigstationsigns.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.cutecharm.bigstationsigns.block.entity.BigStationSignBlockEntity;
+import net.cutecharm.bigstationsigns.network.NetworkingConstants;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.CheckboxWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.render.GameRenderer;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class BigStationSignScreen extends Screen {
 
-    public enum COLOR {
-        WHITE,
-        LIGHT_GRAY,
-        GRAY,
-        BLACK,
-        BROWN,
-        RED,
-        ORANGE,
-        YELLOW,
-        LIME,
-        GREEN,
-        CYAN,
-        LIGHT_BLUE,
-        BLUE,
-        PURPLE,
-        MAGENTA,
-        PINK
-    }
+    private final BigStationSignBlockEntity blockEntity;
 
     private TextFieldWidget textFieldWidget;
     private ButtonWidget buttonWhite;
@@ -53,14 +40,14 @@ public class BigStationSignScreen extends Screen {
     private ButtonWidget buttonPink;
     private ButtonWidget doneButton;
 
-    public COLOR currentColor = COLOR.BLACK;
+    private BigStationSigns.COLOR currentColor = BigStationSigns.COLOR.BLACK;
 
     private CheckboxWidget checkBold;
     private CheckboxWidget checkItalic;
     private CheckboxWidget checkUnderline;
-    public Boolean signMessageBold = false;
-    public Boolean signMessageItalic = false;
-    public Boolean signMessageUnderline = false;
+    private Boolean signMessageBold = false;
+    private Boolean signMessageItalic = false;
+    private Boolean signMessageUnderline = false;
     private String signMessage = "";
 
     private int x;
@@ -75,110 +62,119 @@ public class BigStationSignScreen extends Screen {
 
     public BigStationSignScreen(BigStationSignBlockEntity entity) {
         super(Text.translatable("screentext.screen_title"));
-
+        blockEntity = entity;
     }
     
     protected void init() {
         super.init();
+
+        signMessage = blockEntity.signMessage;
+        currentColor = blockEntity.signColor;
+        signMessageBold = blockEntity.signBold;
+        signMessageItalic = blockEntity.signItalic;
+        signMessageUnderline = blockEntity.signUnderline;
 
         this.x = (this.width - this.referenceWidth)/2;
         this.y = (this.height - this.referenceHeight)/2;
 
 
         textFieldWidget = new TextFieldWidget(this.textRenderer, this.x, this.y+15, 176, 20,
-                Text.empty());
+                Text.literal(signMessage));
+        textFieldWidget.setText(signMessage);
         textFieldWidget.setMaxLength(32);
+
         buttonWhite = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.WHITE;
+            currentColor = BigStationSigns.COLOR.WHITE;
                 }).dimensions(this.x-25, this.y-10, 20, 20)
                 .build();
         buttonLightGray = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.LIGHT_GRAY;
+            currentColor = BigStationSigns.COLOR.LIGHT_GRAY;
                 }).dimensions(this.x-25, this.y+15, 20, 20)
                 .build();
         buttonGray = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.GRAY;
+            currentColor = BigStationSigns.COLOR.GRAY;
                 }).dimensions(this.x-25, this.y+40, 20, 20)
                 .build();
         buttonBlack = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.BLACK;
+            currentColor = BigStationSigns.COLOR.BLACK;
                 }).dimensions(this.x-25, this.y+65, 20, 20)
                 .build();
         buttonBrown = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.BROWN;
+            currentColor = BigStationSigns.COLOR.BROWN;
                 }).dimensions(this.x-25, this.y+90, 20, 20)
                 .build();
         buttonRed = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.RED;
+            currentColor = BigStationSigns.COLOR.RED;
                 }).dimensions(this.x-25, this.y+115, 20, 20)
                 .build();
         buttonOrange = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.ORANGE;
+            currentColor = BigStationSigns.COLOR.ORANGE;
                 }).dimensions(this.x-25, this.y+140, 20, 20)
                 .build();
         buttonYellow = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.YELLOW;
+            currentColor = BigStationSigns.COLOR.YELLOW;
                 }).dimensions(this.x-25, this.y+165, 20, 20)
                 .build();
         buttonLime = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.LIME;
+            currentColor = BigStationSigns.COLOR.LIME;
                 }).dimensions(this.x+181, this.y-10, 20, 20)
                 .build();
         buttonGreen = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.GREEN;
+            currentColor = BigStationSigns.COLOR.GREEN;
                 }).dimensions(this.x+181, this.y+15, 20, 20)
                 .build();
         buttonCyan = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.CYAN;
+            currentColor = BigStationSigns.COLOR.CYAN;
                 }).dimensions(this.x+181, this.y+40, 20, 20)
                 .build();
         buttonLightBlue = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.LIGHT_BLUE;
+            currentColor = BigStationSigns.COLOR.LIGHT_BLUE;
                 }).dimensions(this.x+181, this.y+65, 20, 20)
                 .build();
         buttonBlue = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.BLUE;
+            currentColor = BigStationSigns.COLOR.BLUE;
                 }).dimensions(this.x+181, this.y+90, 20, 20)
                 .build();
         buttonPurple = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.PURPLE;
+            currentColor = BigStationSigns.COLOR.PURPLE;
                 }).dimensions(this.x+181, this.y+115, 20, 20)
                 .build();
         buttonMagenta = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.MAGENTA;
+            currentColor = BigStationSigns.COLOR.MAGENTA;
                 }).dimensions(this.x+181, this.y+140, 20, 20)
                 .build();
         buttonPink = ButtonWidget.builder(Text.literal(""),
                 button -> {
-            currentColor = COLOR.PINK;
+            currentColor = BigStationSigns.COLOR.PINK;
                 }).dimensions(this.x+181, this.y+165, 20, 20)
                 .build();
         doneButton = ButtonWidget.builder(Text.translatable("screentext.done_button"),
                 button -> {
             //send the data to server
                     signMessage = this.textFieldWidget.getText();
-                    BigStationSigns.LOGGER.info("The sign message is " + signMessage);
+                    signMessageBold = checkBold.isChecked();
+                    signMessageItalic = checkItalic.isChecked();
+                    signMessageUnderline = checkUnderline.isChecked();
 
                     //in the block entity, write something that gets all the data (text, color, bold italic & underline)
-
+                    sendSignData();
                     this.close();
                 }).dimensions(this.x, this.y+165, 176, 20).build();
-
 
         checkBold = new CheckboxWidget(this.x, this.y + 65, 20, 20, Text.literal(""), signMessageBold);
         checkItalic = new CheckboxWidget(this.x, this.y + 90, 20, 20, Text.literal(""), signMessageItalic);
@@ -249,6 +245,38 @@ public class BigStationSignScreen extends Screen {
     public static void openEditScreen(BigStationSignBlockEntity entity) {
         ScreenSetter.openScreen(new BigStationSignScreen(entity));
     }
+
+    private void sendSignData() {
+        PacketByteBuf buf = PacketByteBufs.create();
+        int colorToInteger = 3;
+        switch (currentColor) {
+            case WHITE -> colorToInteger = 0;
+            case LIGHT_GRAY -> colorToInteger = 1;
+            case GRAY -> colorToInteger = 2;
+            case BLACK -> colorToInteger = 3;
+            case BROWN -> colorToInteger = 4;
+            case RED -> colorToInteger = 5;
+            case ORANGE -> colorToInteger = 6;
+            case YELLOW -> colorToInteger = 7;
+            case LIME -> colorToInteger = 8;
+            case GREEN -> colorToInteger = 9;
+            case CYAN -> colorToInteger = 10;
+            case LIGHT_BLUE -> colorToInteger = 11;
+            case BLUE -> colorToInteger = 12;
+            case PURPLE -> colorToInteger = 13;
+            case MAGENTA -> colorToInteger = 14;
+            case PINK -> colorToInteger = 15;
+        }
+        buf.writeString(signMessage);
+        buf.writeBoolean(signMessageBold);
+        buf.writeBoolean(signMessageItalic);
+        buf.writeBoolean(signMessageUnderline);
+        buf.writeInt(colorToInteger);
+        buf.writeBlockPos(this.blockEntity.getPos());
+        ClientPlayNetworking.send(NetworkingConstants.BIG_STATION_SIGN_PACKET_ID, buf);
+    }
+
+
 
 
 
