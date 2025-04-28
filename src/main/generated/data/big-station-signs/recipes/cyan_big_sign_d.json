@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "big-station-signs:cyan_big_sign_c"
+    }
+  ],
+  "result": {
+    "item": "big-station-signs:cyan_big_sign_d"
+  }
+}

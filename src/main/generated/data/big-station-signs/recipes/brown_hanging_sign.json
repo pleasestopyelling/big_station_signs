@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_dye"
+    },
+    {
+      "tag": "minecraft:hanging_signs"
+    }
+  ],
+  "result": {
+    "item": "big-station-signs:brown_hanging_sign"
+  }
+}

@@ -12,9 +12,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(ModBlocks.STANDING_ORANGE_SIGN);
-        addDrop(ModBlocks.STANDING_ORANGE_SIGN_B);
+        //addDrop(ModBlocks.STANDING_ORANGE_SIGN_B);
         addDrop(ModBlocks.WALL_ORANGE_SIGN);
-        addDrop(ModBlocks.WALL_ORANGE_SIGN_B);
+        //addDrop(ModBlocks.WALL_ORANGE_SIGN_B);
         addDrop(ModBlocks.HANGING_ORANGE_SIGN);
         addDrop(ModBlocks.WALL_HANGING_ORANGE_SIGN);
 
@@ -24,20 +24,20 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WALL_HANGING_RED_SIGN);
 
         addDrop(ModBlocks.STANDING_BLACK_SIGN);
-        addDrop(ModBlocks.STANDING_BLACK_SIGN_B);
-        addDrop(ModBlocks.STANDING_BLACK_SIGN_C);
-        addDrop(ModBlocks.STANDING_BLACK_SIGN_D);
+        //addDrop(ModBlocks.STANDING_BLACK_SIGN_B);
+        //addDrop(ModBlocks.STANDING_BLACK_SIGN_C);
+        //addDrop(ModBlocks.STANDING_BLACK_SIGN_D);
         addDrop(ModBlocks.WALL_BLACK_SIGN);
-        addDrop(ModBlocks.WALL_BLACK_SIGN_B);
-        addDrop(ModBlocks.WALL_BLACK_SIGN_C);
-        addDrop(ModBlocks.WALL_BLACK_SIGN_D);
+        //addDrop(ModBlocks.WALL_BLACK_SIGN_B);
+        //addDrop(ModBlocks.WALL_BLACK_SIGN_C);
+        //addDrop(ModBlocks.WALL_BLACK_SIGN_D);
         addDrop(ModBlocks.HANGING_BLACK_SIGN);
         addDrop(ModBlocks.WALL_HANGING_BLACK_SIGN);
 
         addDrop(ModBlocks.STANDING_PINK_SIGN);
-        addDrop(ModBlocks.STANDING_PINK_SIGN_B);
+        //addDrop(ModBlocks.STANDING_PINK_SIGN_B);
         addDrop(ModBlocks.WALL_PINK_SIGN);
-        addDrop(ModBlocks.WALL_PINK_SIGN_B);
+        //addDrop(ModBlocks.WALL_PINK_SIGN_B);
         addDrop(ModBlocks.HANGING_PINK_SIGN);
         addDrop(ModBlocks.WALL_HANGING_PINK_SIGN);
 
@@ -47,20 +47,20 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WALL_HANGING_GRAY_SIGN);
 
         addDrop(ModBlocks.STANDING_LIME_SIGN);
-        addDrop(ModBlocks.STANDING_LIME_SIGN_B);
+        //addDrop(ModBlocks.STANDING_LIME_SIGN_B);
         addDrop(ModBlocks.WALL_LIME_SIGN);
-        addDrop(ModBlocks.WALL_LIME_SIGN_B);
+        //addDrop(ModBlocks.WALL_LIME_SIGN_B);
         addDrop(ModBlocks.HANGING_LIME_SIGN);
         addDrop(ModBlocks.WALL_HANGING_LIME_SIGN);
 
         addDrop(ModBlocks.STANDING_PURPLE_SIGN);
-        addDrop(ModBlocks.STANDING_PURPLE_SIGN_B);
-        addDrop(ModBlocks.STANDING_PURPLE_SIGN_C);
-        addDrop(ModBlocks.STANDING_PURPLE_SIGN_D);
+        //addDrop(ModBlocks.STANDING_PURPLE_SIGN_B);
+        //addDrop(ModBlocks.STANDING_PURPLE_SIGN_C);
+        //addDrop(ModBlocks.STANDING_PURPLE_SIGN_D);
         addDrop(ModBlocks.WALL_PURPLE_SIGN);
-        addDrop(ModBlocks.WALL_PURPLE_SIGN_B);
-        addDrop(ModBlocks.WALL_PURPLE_SIGN_C);
-        addDrop(ModBlocks.WALL_PURPLE_SIGN_D);
+        //addDrop(ModBlocks.WALL_PURPLE_SIGN_B);
+        //addDrop(ModBlocks.WALL_PURPLE_SIGN_C);
+        //addDrop(ModBlocks.WALL_PURPLE_SIGN_D);
         addDrop(ModBlocks.HANGING_PURPLE_SIGN);
         addDrop(ModBlocks.WALL_HANGING_PURPLE_SIGN);
 
@@ -80,20 +80,20 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WALL_HANGING_LIGHT_GRAY_SIGN);
 
         addDrop(ModBlocks.STANDING_GREEN_SIGN);
-        addDrop(ModBlocks.STANDING_GREEN_SIGN_B);
-        addDrop(ModBlocks.STANDING_GREEN_SIGN_C);
-        addDrop(ModBlocks.STANDING_GREEN_SIGN_D);
+        //addDrop(ModBlocks.STANDING_GREEN_SIGN_B);
+        //addDrop(ModBlocks.STANDING_GREEN_SIGN_C);
+        //addDrop(ModBlocks.STANDING_GREEN_SIGN_D);
         addDrop(ModBlocks.WALL_GREEN_SIGN);
-        addDrop(ModBlocks.WALL_GREEN_SIGN_B);
-        addDrop(ModBlocks.WALL_GREEN_SIGN_C);
-        addDrop(ModBlocks.WALL_GREEN_SIGN_D);
+        //addDrop(ModBlocks.WALL_GREEN_SIGN_B);
+        //addDrop(ModBlocks.WALL_GREEN_SIGN_C);
+        //addDrop(ModBlocks.WALL_GREEN_SIGN_D);
         addDrop(ModBlocks.HANGING_GREEN_SIGN);
         addDrop(ModBlocks.WALL_HANGING_GREEN_SIGN);
 
         addDrop(ModBlocks.STANDING_YELLOW_SIGN);
-        addDrop(ModBlocks.STANDING_YELLOW_SIGN_B);
+        //addDrop(ModBlocks.STANDING_YELLOW_SIGN_B);
         addDrop(ModBlocks.WALL_YELLOW_SIGN);
-        addDrop(ModBlocks.WALL_YELLOW_SIGN_B);
+        //addDrop(ModBlocks.WALL_YELLOW_SIGN_B);
         addDrop(ModBlocks.HANGING_YELLOW_SIGN);
         addDrop(ModBlocks.WALL_HANGING_YELLOW_SIGN);
 
@@ -113,47 +113,47 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WALL_HANGING_WHITE_SIGN);
 
         addDrop(ModBlocks.STANDING_CYAN_SIGN);
-        addDrop(ModBlocks.STANDING_CYAN_SIGN_B);
-        addDrop(ModBlocks.STANDING_CYAN_SIGN_C);
-        addDrop(ModBlocks.STANDING_CYAN_SIGN_D);
+        //addDrop(ModBlocks.STANDING_CYAN_SIGN_B);
+        //addDrop(ModBlocks.STANDING_CYAN_SIGN_C);
+        //addDrop(ModBlocks.STANDING_CYAN_SIGN_D);
         addDrop(ModBlocks.WALL_CYAN_SIGN);
-        addDrop(ModBlocks.WALL_CYAN_SIGN_B);
-        addDrop(ModBlocks.WALL_CYAN_SIGN_C);
-        addDrop(ModBlocks.WALL_CYAN_SIGN_D);
+        //addDrop(ModBlocks.WALL_CYAN_SIGN_B);
+        //addDrop(ModBlocks.WALL_CYAN_SIGN_C);
+        //addDrop(ModBlocks.WALL_CYAN_SIGN_D);
         addDrop(ModBlocks.WALL_HANGING_CYAN_SIGN);
 
         addDrop(ModBlocks.WHITE_BIG_STATION_SIGN);
         addDrop(ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN);
         addDrop(ModBlocks.GRAY_BIG_STATION_SIGN);
         addDrop(ModBlocks.BLACK_BIG_STATION_SIGN);
-        addDrop(ModBlocks.BLACK_BIG_STATION_SIGN_B);
-        addDrop(ModBlocks.BLACK_BIG_STATION_SIGN_C);
-        addDrop(ModBlocks.BLACK_BIG_STATION_SIGN_D);
+        //addDrop(ModBlocks.BLACK_BIG_STATION_SIGN_B);
+        //addDrop(ModBlocks.BLACK_BIG_STATION_SIGN_C);
+        //addDrop(ModBlocks.BLACK_BIG_STATION_SIGN_D);
         addDrop(ModBlocks.BROWN_BIG_STATION_SIGN);
         addDrop(ModBlocks.RED_BIG_STATION_SIGN);
         addDrop(ModBlocks.ORANGE_BIG_STATION_SIGN);
-        addDrop(ModBlocks.ORANGE_BIG_STATION_SIGN_B);
+        //addDrop(ModBlocks.ORANGE_BIG_STATION_SIGN_B);
         addDrop(ModBlocks.YELLOW_BIG_STATION_SIGN);
-        addDrop(ModBlocks.YELLOW_BIG_STATION_SIGN_B);
+        //addDrop(ModBlocks.YELLOW_BIG_STATION_SIGN_B);
         addDrop(ModBlocks.LIME_BIG_STATION_SIGN);
-        addDrop(ModBlocks.LIME_BIG_STATION_SIGN_B);
+        //addDrop(ModBlocks.LIME_BIG_STATION_SIGN_B);
         addDrop(ModBlocks.GREEN_BIG_STATION_SIGN);
-        addDrop(ModBlocks.GREEN_BIG_STATION_SIGN_B);
-        addDrop(ModBlocks.GREEN_BIG_STATION_SIGN_C);
-        addDrop(ModBlocks.GREEN_BIG_STATION_SIGN_D);
+        //addDrop(ModBlocks.GREEN_BIG_STATION_SIGN_B);
+        //addDrop(ModBlocks.GREEN_BIG_STATION_SIGN_C);
+        //addDrop(ModBlocks.GREEN_BIG_STATION_SIGN_D);
         addDrop(ModBlocks.CYAN_BIG_STATION_SIGN);
-        addDrop(ModBlocks.CYAN_BIG_STATION_SIGN_B);
-        addDrop(ModBlocks.CYAN_BIG_STATION_SIGN_C);
-        addDrop(ModBlocks.CYAN_BIG_STATION_SIGN_D);
+        //addDrop(ModBlocks.CYAN_BIG_STATION_SIGN_B);
+        //addDrop(ModBlocks.CYAN_BIG_STATION_SIGN_C);
+        //addDrop(ModBlocks.CYAN_BIG_STATION_SIGN_D);
         addDrop(ModBlocks.LIGHT_BLUE_BIG_STATION_SIGN);
         addDrop(ModBlocks.BLUE_BIG_STATION_SIGN);
         addDrop(ModBlocks.PURPLE_BIG_STATION_SIGN);
-        addDrop(ModBlocks.PURPLE_BIG_STATION_SIGN_B);
-        addDrop(ModBlocks.PURPLE_BIG_STATION_SIGN_C);
-        addDrop(ModBlocks.PURPLE_BIG_STATION_SIGN_D);
+        //addDrop(ModBlocks.PURPLE_BIG_STATION_SIGN_B);
+        //addDrop(ModBlocks.PURPLE_BIG_STATION_SIGN_C);
+        //addDrop(ModBlocks.PURPLE_BIG_STATION_SIGN_D);
         addDrop(ModBlocks.MAGENTA_BIG_STATION_SIGN);
         addDrop(ModBlocks.PINK_BIG_STATION_SIGN);
-        addDrop(ModBlocks.PINK_BIG_STATION_SIGN_B);
+        //addDrop(ModBlocks.PINK_BIG_STATION_SIGN_B);
 
     }
 }

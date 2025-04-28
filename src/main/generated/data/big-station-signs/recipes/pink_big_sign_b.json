@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "big-station-signs:pink_big_sign"
+    }
+  ],
+  "result": {
+    "item": "big-station-signs:pink_big_sign_b"
+  }
+}
