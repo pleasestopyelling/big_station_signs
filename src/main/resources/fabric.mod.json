@@ -1,17 +1,17 @@
 {
 	"schemaVersion": 1,
 	"id": "big-station-signs",
-	"version": "${version}",
+	"version": "0.1.0",
 	"name": "Big Station Signs",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Signs with some designs from the UK train network, with big text",
 	"authors": [
-		"Me!"
+		"please stop yelling"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "tbd",
+		"sources": "https://github.com/pleasestopyelling/big_station_signs"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/big-station-signs/icon.png",
 	"environment": "*",
 	"entrypoints": {

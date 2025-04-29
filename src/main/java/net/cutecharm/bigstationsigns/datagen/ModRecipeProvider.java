@@ -27,24 +27,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.WHITE_SIGN, 1)
                 .input(WHITE_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(Items.WHITE_DYE), conditionsFromItem(Items.WHITE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.WHITE_SIGN)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.LIGHT_GRAY_SIGN, 1)
                 .input(Items.LIGHT_GRAY_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(Items.LIGHT_GRAY_DYE), conditionsFromItem(Items.LIGHT_GRAY_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.LIGHT_GRAY_SIGN)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.GRAY_SIGN, 1)
                 .input(Items.GRAY_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(Items.GRAY_DYE), conditionsFromItem(Items.GRAY_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.GRAY_SIGN)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.BLACK_SIGN, 1)
                 .input(Items.BLACK_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(ModItems.BLACK_SIGN), conditionsFromItem(ModItems.BLACK_SIGN))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLACK_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.BLACK_SIGN_B, 1)
@@ -63,18 +67,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.BROWN_SIGN, 1)
                 .input(BROWN_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(BROWN_DYE), conditionsFromItem(BROWN_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.BROWN_SIGN)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.RED_SIGN, 1)
                 .input(RED_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(RED_DYE), conditionsFromItem(RED_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.RED_SIGN)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.ORANGE_SIGN, 1)
                 .input(ORANGE_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(ORANGE_DYE), conditionsFromItem(ORANGE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ORANGE_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.ORANGE_SIGN_B, 1)
@@ -85,6 +92,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.YELLOW_SIGN, 1)
                 .input(YELLOW_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(YELLOW_DYE), conditionsFromItem(YELLOW_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.YELLOW_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.YELLOW_SIGN_B, 1)
@@ -95,6 +103,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.LIME_SIGN, 1)
                 .input(LIME_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(LIME_DYE), conditionsFromItem(LIME_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.LIME_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.LIME_SIGN_B, 1)
@@ -105,6 +114,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.GREEN_SIGN, 1)
                 .input(GREEN_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(GREEN_DYE), conditionsFromItem(GREEN_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.GREEN_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.GREEN_SIGN_B, 1)
@@ -123,6 +133,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.CYAN_SIGN, 1)
                 .input(CYAN_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(CYAN_DYE), conditionsFromItem(CYAN_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.CYAN_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.CYAN_SIGN_B, 1)
@@ -141,18 +152,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.LIGHT_BLUE_SIGN, 1)
                 .input(LIGHT_BLUE_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(LIGHT_BLUE_DYE), conditionsFromItem(LIGHT_BLUE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.LIGHT_BLUE_SIGN)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.BLUE_SIGN, 1)
                 .input(BLUE_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(BLUE_DYE), conditionsFromItem(BLUE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLUE_SIGN)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.PURPLE_SIGN, 1)
                 .input(PURPLE_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(PURPLE_DYE), conditionsFromItem(PURPLE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.PURPLE_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.PURPLE_SIGN_B, 1)
@@ -171,12 +185,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.MAGENTA_SIGN, 1)
                 .input(MAGENTA_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(MAGENTA_DYE), conditionsFromItem(MAGENTA_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.MAGENTA_SIGN)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.PINK_SIGN, 1)
                 .input(PINK_DYE)
                 .input(ItemTags.SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(PINK_DYE), conditionsFromItem(PINK_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.PINK_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.PINK_SIGN_B, 1)
@@ -188,81 +204,97 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_WHITE_SIGN, 1)
                 .input(WHITE_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(Items.WHITE_DYE), conditionsFromItem(Items.WHITE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_WHITE_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_LIGHT_GRAY_SIGN, 1)
                 .input(LIGHT_GRAY_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(LIGHT_GRAY_DYE), conditionsFromItem(LIGHT_GRAY_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_LIGHT_GRAY_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_GRAY_SIGN, 1)
                 .input(GRAY_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(GRAY_DYE), conditionsFromItem(GRAY_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_GRAY_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_BLACK_SIGN, 1)
                 .input(BLACK_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(BLACK_DYE), conditionsFromItem(BLACK_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_BLACK_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_BROWN_SIGN, 1)
                 .input(BROWN_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(BROWN_DYE), conditionsFromItem(BROWN_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_BROWN_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_RED_SIGN, 1)
                 .input(RED_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(RED_DYE), conditionsFromItem(RED_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_RED_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_ORANGE_SIGN, 1)
                 .input(ORANGE_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(ORANGE_DYE), conditionsFromItem(ORANGE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_ORANGE_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_YELLOW_SIGN, 1)
                 .input(YELLOW_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(YELLOW_DYE), conditionsFromItem(YELLOW_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_YELLOW_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_LIME_SIGN, 1)
                 .input(LIME_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(LIME_DYE), conditionsFromItem(LIME_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_LIME_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_GREEN_SIGN, 1)
                 .input(GREEN_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(GREEN_DYE), conditionsFromItem(GREEN_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_GREEN_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_CYAN_SIGN, 1)
                 .input(CYAN_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(CYAN_DYE), conditionsFromItem(CYAN_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_CYAN_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_LIGHT_BLUE_SIGN, 1)
                 .input(LIGHT_BLUE_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(LIGHT_BLUE_DYE), conditionsFromItem(LIGHT_BLUE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_LIGHT_BLUE_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_BLUE_SIGN, 1)
                 .input(BLUE_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(BLUE_DYE), conditionsFromItem(BLUE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_BLUE_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_PURPLE_SIGN, 1)
                 .input(PURPLE_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(PURPLE_DYE), conditionsFromItem(PURPLE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_PURPLE_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_MAGENTA_SIGN, 1)
                 .input(MAGENTA_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(MAGENTA_DYE), conditionsFromItem(MAGENTA_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_MAGENTA_SIGN)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.HANGING_PINK_SIGN, 1)
                 .input(PINK_DYE)
                 .input(ItemTags.HANGING_SIGNS)
+                .input(IRON_NUGGET)
                 .criterion(hasItem(PINK_DYE), conditionsFromItem(PINK_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_PINK_SIGN)));
 
@@ -332,10 +364,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.PINK_BIG_STATION_SIGN), conditionsFromItem(ModBlocks.PINK_BIG_STATION_SIGN))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PINK_BIG_STATION_SIGN_B)));
 
-
         //shaped recipes for big signs
         //would like to offer a slightly cheaper create mod based recipe as well
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.WHITE_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -344,7 +375,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(WHITE_DYE), conditionsFromItem(WHITE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.WHITE_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -353,7 +384,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(LIGHT_GRAY_DYE), conditionsFromItem(LIGHT_GRAY_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.GRAY_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.GRAY_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -362,7 +393,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(GRAY_DYE), conditionsFromItem(GRAY_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GRAY_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -371,7 +402,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(BLACK_DYE), conditionsFromItem(BLACK_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BLACK_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BROWN_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BROWN_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -380,7 +411,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(BROWN_DYE), conditionsFromItem(BROWN_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BROWN_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.RED_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.RED_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -389,7 +420,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(RED_DYE), conditionsFromItem(RED_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.RED_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.ORANGE_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.ORANGE_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -398,7 +429,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(ORANGE_DYE), conditionsFromItem(ORANGE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.ORANGE_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.YELLOW_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.YELLOW_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -407,7 +438,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(YELLOW_DYE), conditionsFromItem(YELLOW_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.YELLOW_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.LIME_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.LIME_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -416,7 +447,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(LIME_DYE), conditionsFromItem(LIME_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.LIME_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.GREEN_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.GREEN_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -425,7 +456,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(GREEN_DYE), conditionsFromItem(GREEN_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GREEN_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.CYAN_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.CYAN_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -434,7 +465,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(CYAN_DYE), conditionsFromItem(CYAN_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CYAN_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.LIGHT_BLUE_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.LIGHT_BLUE_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -443,7 +474,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(LIGHT_BLUE_DYE), conditionsFromItem(LIGHT_BLUE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.LIGHT_BLUE_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLUE_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLUE_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -452,7 +483,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(BLUE_DYE), conditionsFromItem(BLUE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BLUE_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.PURPLE_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.PURPLE_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -461,7 +492,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(PURPLE_DYE), conditionsFromItem(PURPLE_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.PURPLE_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.MAGENTA_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.MAGENTA_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
@@ -470,7 +501,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('s', ItemTags.SIGNS)
                 .criterion(hasItem(MAGENTA_DYE), conditionsFromItem(MAGENTA_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.MAGENTA_BIG_STATION_SIGN)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.PINK_BIG_STATION_SIGN, 6)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.PINK_BIG_STATION_SIGN, 12)
                 .pattern("idi")
                 .pattern("isi")
                 .pattern("iii")
