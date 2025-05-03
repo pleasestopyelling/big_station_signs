@@ -161,5 +161,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PINK_BIG_STATION_SIGN_B)
                 .add(ModBlocks.PINK_BIG_STATION_SIGN);
 
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.OAK_BIG_STATION_SIGN)
+                .add(ModBlocks.BIRCH_BIG_STATION_SIGN)
+                .add(ModBlocks.JUNGLE_BIG_STATION_SIGN)
+                .add(ModBlocks.SPRUCE_BIG_STATION_SIGN)
+                .add(ModBlocks.ACACIA_BIG_STATION_SIGN)
+                .add(ModBlocks.DARK_OAK_BIG_STATION_SIGN)
+                .add(ModBlocks.BAMBOO_BIG_STATION_SIGN)
+                .add(ModBlocks.CRIMSON_BIG_STATION_SIGN)
+                .add(ModBlocks.WARPED_BIG_STATION_SIGN)
+                .add(ModBlocks.CHERRY_BIG_STATION_SIGN)
+                .add(ModBlocks.MANGROVE_BIG_STATION_SIGN);
+
     }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "big-station-signs:item/white_sign"
+    "layer0": "big-station-signs:item/oak_big_sign"
   }
 }

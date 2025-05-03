@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north":  {
+      "model": "big-station-signs:block/acacia_big_sign", "y": 180, "uvlock": false
+    },
+    "facing=east":  {
+      "model": "big-station-signs:block/acacia_big_sign", "y": 270, "uvlock": false
+    },
+    "facing=south":  {
+      "model": "big-station-signs:block/acacia_big_sign", "uvlock": false
+    },
+    "facing=west":  {
+      "model": "big-station-signs:block/acacia_big_sign", "y": 90, "uvlock": false
+    }
+  }
+}

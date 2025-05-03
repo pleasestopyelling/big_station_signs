@@ -108,6 +108,17 @@ public class ModItemGroups {
                         entries.add(ModBlocks.MAGENTA_BIG_STATION_SIGN);
                         entries.add(ModBlocks.PINK_BIG_STATION_SIGN);
                         entries.add(ModBlocks.PINK_BIG_STATION_SIGN_B);
+                        entries.add(ModBlocks.OAK_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.BIRCH_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.JUNGLE_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.SPRUCE_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.ACACIA_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.DARK_OAK_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.CRIMSON_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.WARPED_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.BAMBOO_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.CHERRY_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.MANGROVE_BIG_STATION_SIGN);
 
                     }).build());
 

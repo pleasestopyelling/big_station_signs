@@ -279,6 +279,29 @@ public class ModBlocks {
     public static final Block PINK_BIG_STATION_SIGN_B = registerBlock("pink_big_sign_b",
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(PINK_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
 
+    public static final Block OAK_BIG_STATION_SIGN = registerBlock("oak_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block BIRCH_BIG_STATION_SIGN = registerBlock("birch_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block JUNGLE_BIG_STATION_SIGN = registerBlock("jungle_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block SPRUCE_BIG_STATION_SIGN = registerBlock("spruce_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block ACACIA_BIG_STATION_SIGN = registerBlock("acacia_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block DARK_OAK_BIG_STATION_SIGN = registerBlock("dark_oak_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block BAMBOO_BIG_STATION_SIGN = registerBlock("bamboo_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block CRIMSON_BIG_STATION_SIGN = registerBlock("crimson_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block WARPED_BIG_STATION_SIGN = registerBlock("warped_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block CHERRY_BIG_STATION_SIGN = registerBlock("cherry_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+    public static final Block MANGROVE_BIG_STATION_SIGN = registerBlock("mangrove_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).noBlockBreakParticles().nonOpaque()));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, name), block);

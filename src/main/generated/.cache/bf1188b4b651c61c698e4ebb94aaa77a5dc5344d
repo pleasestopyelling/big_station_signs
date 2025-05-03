@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-29T10:15:08.8099367	Big Station Signs/Block Loot Tables
+// 1.20.1	2025-05-03T14:33:50.884459	Big Station Signs/Block Loot Tables
 4994344a98a65107324b4077821be2167a68e5d1 data\big-station-signs\loot_tables\blocks\white_standing_sign.json
 e88e410b979dd2809d65d4af6179f392f2ed5ba6 data\big-station-signs\loot_tables\blocks\light_gray_hanging_sign.json
 fa9e4b0abc2f19ece669d3d5e7a41570264a137d data\big-station-signs\loot_tables\blocks\gray_big_sign.json
@@ -13,6 +13,7 @@ c6ab214db42d2d700b05091cef5a718d7b479976 data\big-station-signs\loot_tables\bloc
 a1baba5e4cf433b1817ed1f82bd91cd5d0174df2 data\big-station-signs\loot_tables\blocks\purple_big_sign.json
 c67db3b2649ec9171e294084ffa6464b0b79c026 data\big-station-signs\loot_tables\blocks\brown_big_sign.json
 27620df530c1aac7bb4f4735a58b6f7130d775cd data\big-station-signs\loot_tables\blocks\brown_standing_sign.json
+3d2fff20b3ae74c99f768e0c7bc44949c0e524ff data\big-station-signs\loot_tables\blocks\oak_big_sign.json
 d3f40964af82c5cfa0bb2c57696937c1afdec413 data\big-station-signs\loot_tables\blocks\green_hanging_sign.json
 1ecf2cfdc808f8807e19bc67826bc0df18b4ecc2 data\big-station-signs\loot_tables\blocks\red_hanging_sign.json
 c7d3b8f266bc9b261d7b7c309128143270e9e4a9 data\big-station-signs\loot_tables\blocks\pink_hanging_sign.json
@@ -41,8 +42,8 @@ e07c8ad89f90abfe002ebc7086a83a3e68cdbda4 data\big-station-signs\loot_tables\bloc
 ee644be381b80916f74a71d566ce929b0370ad72 data\big-station-signs\loot_tables\blocks\red_big_sign.json
 6ae36e15e2f4d3742336cfda784267e213556d01 data\big-station-signs\loot_tables\blocks\brown_hanging_sign.json
 218b1c0db2b4cb8dea310160b5ce21aba8aa0640 data\big-station-signs\loot_tables\blocks\purple_standing_sign.json
-21e5e7d2647b707d5eb76cad77326490c507e262 data\big-station-signs\loot_tables\blocks\blue_standing_sign.json
 eaeacad37169547ba0c3c67f59163209aae32a8b data\big-station-signs\loot_tables\blocks\lime_big_sign.json
+21e5e7d2647b707d5eb76cad77326490c507e262 data\big-station-signs\loot_tables\blocks\blue_standing_sign.json
 cbe076f04dbd76d6d45973547ea9e3fc5f1d8a3e data\big-station-signs\loot_tables\blocks\light_blue_hanging_sign.json
 96af91fe988773d84b5642cbcfd65a0d673970ca data\big-station-signs\loot_tables\blocks\light_gray_big_sign.json
 d6ab874ede744a2a8a22c4fdafe70e6a06dc9438 data\big-station-signs\loot_tables\blocks\yellow_big_sign.json

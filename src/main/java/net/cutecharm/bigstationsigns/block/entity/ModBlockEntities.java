@@ -42,7 +42,18 @@ public class ModBlockEntities {
                             ModBlocks.PURPLE_BIG_STATION_SIGN_D,
                             ModBlocks.MAGENTA_BIG_STATION_SIGN,
                             ModBlocks.PINK_BIG_STATION_SIGN,
-                            ModBlocks.PINK_BIG_STATION_SIGN_B
+                            ModBlocks.PINK_BIG_STATION_SIGN_B,
+                            ModBlocks.OAK_BIG_STATION_SIGN,
+                            ModBlocks.BIRCH_BIG_STATION_SIGN,
+                            ModBlocks.JUNGLE_BIG_STATION_SIGN,
+                            ModBlocks.SPRUCE_BIG_STATION_SIGN,
+                            ModBlocks.ACACIA_BIG_STATION_SIGN,
+                            ModBlocks.DARK_OAK_BIG_STATION_SIGN,
+                            ModBlocks.BAMBOO_BIG_STATION_SIGN,
+                            ModBlocks.CRIMSON_BIG_STATION_SIGN,
+                            ModBlocks.WARPED_BIG_STATION_SIGN,
+                            ModBlocks.CHERRY_BIG_STATION_SIGN,
+                            ModBlocks.MANGROVE_BIG_STATION_SIGN
                     ).build());
 
     public static void registerBlockEntities() {
