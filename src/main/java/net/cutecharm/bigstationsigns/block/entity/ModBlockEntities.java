@@ -15,6 +15,8 @@ public class ModBlockEntities {
                             ModBlocks.WHITE_BIG_STATION_SIGN,
                             ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN,
                             ModBlocks.GRAY_BIG_STATION_SIGN,
+                            ModBlocks.GRAY_BIG_STATION_SIGN_B,
+                            ModBlocks.GRAY_BIG_STATION_SIGN_C,
                             ModBlocks.BLACK_BIG_STATION_SIGN,
                             ModBlocks.BLACK_BIG_STATION_SIGN_B,
                             ModBlocks.BLACK_BIG_STATION_SIGN_C,

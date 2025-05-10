@@ -24,6 +24,14 @@ public class ModBlocks {
             new TerraformSignBlock(SmallSignTextureHelper.GRAY_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noCollision().noBlockBreakParticles()));
     public static final Block WALL_GRAY_SIGN = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "gray_wall_sign"),
             new TerraformWallSignBlock(SmallSignTextureHelper.GRAY_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(STANDING_GRAY_SIGN).noCollision().noBlockBreakParticles()));
+    public static final Block STANDING_GRAY_SIGN_B = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "gray_standing_sign_b"),
+            new TerraformSignBlock(SmallSignTextureHelper.GRAY_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(STANDING_GRAY_SIGN).noCollision().noBlockBreakParticles()));
+    public static final Block WALL_GRAY_SIGN_B = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "gray_wall_sign_b"),
+            new TerraformWallSignBlock(SmallSignTextureHelper.GRAY_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(STANDING_GRAY_SIGN).noCollision().noBlockBreakParticles()));
+    public static final Block STANDING_GRAY_SIGN_C = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "gray_standing_sign_c"),
+            new TerraformSignBlock(SmallSignTextureHelper.GRAY_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(STANDING_GRAY_SIGN).noCollision().noBlockBreakParticles()));
+    public static final Block WALL_GRAY_SIGN_C = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "gray_wall_sign_c"),
+            new TerraformWallSignBlock(SmallSignTextureHelper.GRAY_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(STANDING_GRAY_SIGN).noCollision().noBlockBreakParticles()));
     public static final Block HANGING_GRAY_SIGN = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "gray_hanging_sign"),
             new TerraformHangingSignBlock(SmallSignTextureHelper.GRAY_HANGING_SIGN_TEXTURE, SmallSignTextureHelper.GRAY_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noCollision().noBlockBreakParticles()));
     public static final Block WALL_HANGING_GRAY_SIGN = Registry.register(Registries.BLOCK, new Identifier(BigStationSigns.MOD_ID, "gray_wall_hanging_sign"),
@@ -220,6 +228,10 @@ public class ModBlocks {
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
     public static final Block GRAY_BIG_STATION_SIGN = registerBlock("gray_big_sign",
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
+    public static final Block GRAY_BIG_STATION_SIGN_B = registerBlock("gray_big_sign_b",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(GRAY_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
+    public static final Block GRAY_BIG_STATION_SIGN_C = registerBlock("gray_big_sign_c",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(GRAY_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
     public static final Block BLACK_BIG_STATION_SIGN = registerBlock("black_big_sign",
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
     public static final Block BLACK_BIG_STATION_SIGN_B = registerBlock("black_big_sign_b",

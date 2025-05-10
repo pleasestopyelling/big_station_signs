@@ -15,6 +15,10 @@ public class ModItems {
     //List of all the items to be registered
     public static final Item GRAY_SIGN = registerItem("gray_sign",
             new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.STANDING_GRAY_SIGN, ModBlocks.WALL_GRAY_SIGN));
+    public static final Item GRAY_SIGN_B = registerItem("gray_sign_b",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.STANDING_GRAY_SIGN_B, ModBlocks.WALL_GRAY_SIGN_B));
+    public static final Item GRAY_SIGN_C = registerItem("gray_sign_c",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.STANDING_GRAY_SIGN_C, ModBlocks.WALL_GRAY_SIGN_C));
     public static final Item HANGING_GRAY_SIGN = registerItem("gray_hanging_sign",
             new HangingSignItem(ModBlocks.HANGING_GRAY_SIGN, ModBlocks.WALL_HANGING_GRAY_SIGN, new FabricItemSettings().maxCount(16) ));
     public static final Item RED_SIGN = registerItem("red_sign",

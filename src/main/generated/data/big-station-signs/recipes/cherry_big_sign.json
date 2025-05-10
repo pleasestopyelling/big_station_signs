@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:cherry_log"
+    },
+    "i": {
+      "item": "minecraft:cherry_planks"
+    },
+    "s": {
+      "item": "minecraft:cherry_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:cherry_big_sign"
+  },
+  "show_notification": true
+}

@@ -33,6 +33,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.STANDING_GRAY_SIGN);
         addDrop(ModBlocks.WALL_GRAY_SIGN);
+        addDrop(ModBlocks.STANDING_GRAY_SIGN_B);
+        addDrop(ModBlocks.WALL_GRAY_SIGN_B);
+        addDrop(ModBlocks.STANDING_GRAY_SIGN_C);
+        addDrop(ModBlocks.WALL_GRAY_SIGN_C);
         addDrop(ModBlocks.HANGING_GRAY_SIGN);
         addDrop(ModBlocks.WALL_HANGING_GRAY_SIGN);
 
@@ -93,6 +97,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WHITE_BIG_STATION_SIGN);
         addDrop(ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN);
         addDrop(ModBlocks.GRAY_BIG_STATION_SIGN);
+        addDrop(ModBlocks.GRAY_BIG_STATION_SIGN_B);
+        addDrop(ModBlocks.GRAY_BIG_STATION_SIGN_C);
         addDrop(ModBlocks.BLACK_BIG_STATION_SIGN);
         addDrop(ModBlocks.BROWN_BIG_STATION_SIGN);
         addDrop(ModBlocks.RED_BIG_STATION_SIGN);

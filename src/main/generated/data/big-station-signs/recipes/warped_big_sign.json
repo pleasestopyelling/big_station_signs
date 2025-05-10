@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:warped_stem"
+    },
+    "i": {
+      "item": "minecraft:warped_planks"
+    },
+    "s": {
+      "item": "minecraft:warped_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:warped_big_sign"
+  },
+  "show_notification": true
+}

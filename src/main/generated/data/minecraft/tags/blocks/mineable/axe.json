@@ -1,6 +1,16 @@
 {
   "replace": false,
   "values": [
-    "big-station-signs:oak_big_sign"
+    "big-station-signs:oak_big_sign",
+    "big-station-signs:birch_big_sign",
+    "big-station-signs:jungle_big_sign",
+    "big-station-signs:spruce_big_sign",
+    "big-station-signs:acacia_big_sign",
+    "big-station-signs:dark_oak_big_sign",
+    "big-station-signs:bamboo_big_sign",
+    "big-station-signs:crimson_big_sign",
+    "big-station-signs:warped_big_sign",
+    "big-station-signs:cherry_big_sign",
+    "big-station-signs:mangrove_big_sign"
   ]
 }

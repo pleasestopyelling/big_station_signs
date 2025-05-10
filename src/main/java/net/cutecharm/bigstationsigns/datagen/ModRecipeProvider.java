@@ -44,6 +44,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(IRON_NUGGET)
                 .criterion(hasItem(Items.GRAY_DYE), conditionsFromItem(Items.GRAY_DYE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.GRAY_SIGN)));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.GRAY_SIGN_B, 1)
+                .input(ModItems.GRAY_SIGN)
+                .criterion(hasItem(ModItems.GRAY_SIGN), conditionsFromItem(ModItems.GRAY_SIGN))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GRAY_SIGN_B)));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.GRAY_SIGN_C, 1)
+                .input(ModItems.GRAY_SIGN_B)
+                .criterion(hasItem(ModItems.GRAY_SIGN_B), conditionsFromItem(ModItems.GRAY_SIGN_B))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GRAY_SIGN_C)));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.BLACK_SIGN, 1)
                 .input(Items.BLACK_DYE)
@@ -299,6 +307,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HANGING_PINK_SIGN)));
 
         //conversion recipes for big signs
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.GRAY_BIG_STATION_SIGN_B, 1)
+                .input(ModBlocks.GRAY_BIG_STATION_SIGN)
+                .criterion(hasItem(ModBlocks.GRAY_BIG_STATION_SIGN), conditionsFromItem(ModBlocks.GRAY_BIG_STATION_SIGN))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GRAY_BIG_STATION_SIGN_B)));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.GRAY_BIG_STATION_SIGN_C, 1)
+                .input(ModBlocks.GRAY_BIG_STATION_SIGN_B)
+                .criterion(hasItem(ModBlocks.GRAY_BIG_STATION_SIGN_B), conditionsFromItem(ModBlocks.GRAY_BIG_STATION_SIGN_B))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GRAY_BIG_STATION_SIGN_C)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_BIG_STATION_SIGN_B, 1)
                 .input(ModBlocks.BLACK_BIG_STATION_SIGN)
                 .criterion(hasItem(ModBlocks.BLACK_BIG_STATION_SIGN), conditionsFromItem(ModBlocks.BLACK_BIG_STATION_SIGN))

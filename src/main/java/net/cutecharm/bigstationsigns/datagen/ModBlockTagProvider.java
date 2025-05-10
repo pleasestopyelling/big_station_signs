@@ -49,6 +49,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
                 .add(ModBlocks.STANDING_GRAY_SIGN)
                 .add(ModBlocks.WALL_GRAY_SIGN)
+                .add(ModBlocks.STANDING_GRAY_SIGN_B)
+                .add(ModBlocks.WALL_GRAY_SIGN_B)
+                .add(ModBlocks.STANDING_GRAY_SIGN_C)
+                .add(ModBlocks.WALL_GRAY_SIGN_C)
                 .add(ModBlocks.HANGING_GRAY_SIGN)
                 .add(ModBlocks.WALL_HANGING_GRAY_SIGN)
 
@@ -131,6 +135,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.WHITE_BIG_STATION_SIGN)
                 .add(ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN)
                 .add(ModBlocks.GRAY_BIG_STATION_SIGN)
+                .add(ModBlocks.GRAY_BIG_STATION_SIGN_B)
+                .add(ModBlocks.GRAY_BIG_STATION_SIGN_C)
                 .add(ModBlocks.BLACK_BIG_STATION_SIGN)
                 .add(ModBlocks.BLACK_BIG_STATION_SIGN_B)
                 .add(ModBlocks.BLACK_BIG_STATION_SIGN_C)

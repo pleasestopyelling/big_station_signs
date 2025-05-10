@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:crimson_stem"
+    },
+    "i": {
+      "item": "minecraft:crimson_planks"
+    },
+    "s": {
+      "item": "minecraft:crimson_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:crimson_big_sign"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:birch_log"
+    },
+    "i": {
+      "item": "minecraft:birch_planks"
+    },
+    "s": {
+      "item": "minecraft:birch_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:birch_big_sign"
+  },
+  "show_notification": true
+}
