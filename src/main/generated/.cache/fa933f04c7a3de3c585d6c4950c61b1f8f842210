@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-10T11:29:51.2375819	Big Station Signs/Recipes
+// 1.20.1	2025-05-10T14:31:58.8360844	Big Station Signs/Recipes
 e6b8208e088292aceba21a35f45c002363970d94 data\big-station-signs\advancements\recipes\decorations\dark_oak_big_sign.json
 fadfa89908630cf27711876fd19d3c29d1cd0b51 data\big-station-signs\recipes\black_big_sign_b.json
 75d20809d7b5e345e1760bdd7a361a9133c23dc4 data\big-station-signs\advancements\recipes\decorations\purple_sign_b.json
@@ -49,8 +49,8 @@ a810faf2179e7d66eedcc8efa5b5e265558c66b0 data\big-station-signs\recipes\light_gr
 3c2c68ac8174228a3c745a8ae2f2be3a08f31959 data\big-station-signs\recipes\purple_hanging_sign.json
 6f2ce1eb4d03e87eafc1d399e465e846c0fab2d9 data\big-station-signs\recipes\green_sign_b.json
 8ee75152d5474b7b43d5f5b2a1f0458dd79d4b75 data\big-station-signs\advancements\recipes\decorations\yellow_big_sign.json
-67fa6bf6ec812f5600b9d44d82a8ff3f426a1861 data\big-station-signs\advancements\recipes\decorations\black_sign.json
 4ce8aa9bc8f0a9540299d6f9135e067aa20c6f22 data\big-station-signs\advancements\recipes\decorations\light_blue_hanging_sign.json
+67fa6bf6ec812f5600b9d44d82a8ff3f426a1861 data\big-station-signs\advancements\recipes\decorations\black_sign.json
 ad5e67e1ec1ab0d45005340738cfe994ebf0b5cd data\big-station-signs\recipes\spruce_big_sign.json
 83fd3f65c4e57ff6e90321ef8ce46e007532dd2c data\big-station-signs\advancements\recipes\decorations\gray_big_sign_b.json
 8ac15ad45c1d519d476f3a48dd52eef384c35047 data\big-station-signs\advancements\recipes\decorations\lime_sign_b.json
@@ -68,8 +68,8 @@ aef5fa01a5f7540a99ef9f573c43b3bb0b7d9600 data\big-station-signs\recipes\cyan_sig
 c55412c7e6ac347f52facd0239de0ddb40c7c104 data\big-station-signs\recipes\purple_sign_c.json
 aaceac6552094ba31e8e17864e161cb487e02f8a data\big-station-signs\recipes\purple_big_sign_c.json
 268567152b77a776d504c98107ebecbf2c7dbf7d data\big-station-signs\advancements\recipes\decorations\mangrove_big_sign.json
-d747ebf35f9d0841a6471b7738eab3c83de85c10 data\big-station-signs\advancements\recipes\decorations\magenta_sign.json
 2c3b62cb817094f718a2ae82bc7666b7b28f9680 data\big-station-signs\advancements\recipes\decorations\purple_sign.json
+d747ebf35f9d0841a6471b7738eab3c83de85c10 data\big-station-signs\advancements\recipes\decorations\magenta_sign.json
 f5b87c97c2c3d35fa095978455612953cde8ef68 data\big-station-signs\advancements\recipes\decorations\birch_big_sign.json
 20d9fb43404bb338fbd0e37f6178616b145f66dd data\big-station-signs\advancements\recipes\decorations\cherry_big_sign.json
 6c8741b9a3c728917b13cfaac87746b7b05e1448 data\big-station-signs\recipes\crimson_big_sign.json
@@ -108,8 +108,8 @@ ad83ed43aff98fcf666889dd934df9320ed5d84a data\big-station-signs\recipes\black_ha
 8399544b3f093d4917b1b8bc79b2f27bea14f027 data\big-station-signs\advancements\recipes\decorations\orange_big_sign.json
 357eb038729c0193ea66b2ecbdc9b1aa61d008eb data\big-station-signs\advancements\recipes\decorations\magenta_big_sign.json
 9d9b5f5688b64a0f136dd780e54b0694086d7954 data\big-station-signs\recipes\green_big_sign_b.json
-24c27e2c21315ae478c66ef280eda31c00f7beb1 data\big-station-signs\recipes\blue_big_sign.json
 9155e3ee1d7954a6da83a20b25ade0859657ea18 data\big-station-signs\recipes\pink_big_sign.json
+24c27e2c21315ae478c66ef280eda31c00f7beb1 data\big-station-signs\recipes\blue_big_sign.json
 eb8e2634d2a585256a30aa5db93de82ae68ba9a2 data\big-station-signs\advancements\recipes\decorations\oak_big_sign.json
 e4b94c994e5da241655b82d7b13e6b932b498dd1 data\big-station-signs\advancements\recipes\decorations\green_sign_b.json
 18fcdbb86b5795bbba9e3ff2f5139dbffa75811a data\big-station-signs\advancements\recipes\decorations\gray_hanging_sign.json

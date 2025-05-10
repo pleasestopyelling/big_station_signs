@@ -1,6 +1,10 @@
 {
   "block.big-station-signs.gray_standing_sign": "Station Sign (Avanti West Coast)",
   "block.big-station-signs.gray_wall_sign": "Wall Station Sign (Avanti West Coast)",
+  "block.big-station-signs.gray_standing_sign_b": "Station Sign (Avanti West Coast B)",
+  "block.big-station-signs.gray_wall_sign_b": "Wall Station Sign (Avanti West Coast B)",
+  "block.big-station-signs.gray_standing_sign_c": "Station Sign (Avanti West Coast C)",
+  "block.big-station-signs.gray_wall_sign_c": "Wall Station Sign (Avanti West Coast C)",
   "block.big-station-signs.gray_hanging_sign": "Hanging Station Sign (Avanti West Coast)",
   "block.big-station-signs.gray_wall_hanging_sign": "Wall Hanging Station Sign (Avanti West Coast)",
   "block.big-station-signs.red_standing_sign": "Station Sign (Greater Anglia)",

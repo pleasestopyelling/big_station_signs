@@ -8,6 +8,8 @@ public class SmallSignTextureHelper {
 
     //Textures for the small signs
     public static final Identifier GRAY_SIGN_TEXTURE = new Identifier(BigStationSigns.MOD_ID, "entity/signs/gray");
+    public static final Identifier GRAY_SIGN_TEXTURE_B = new Identifier(BigStationSigns.MOD_ID, "entity/signs/grayb");
+    public static final Identifier GRAY_SIGN_TEXTURE_C = new Identifier(BigStationSigns.MOD_ID, "entity/signs/grayc");
     public static final Identifier GRAY_HANGING_SIGN_TEXTURE = new Identifier(BigStationSigns.MOD_ID, "entity/signs/hanging/gray");
     public static final Identifier GRAY_HANGING_GUI_SIGN_TEXTURE = new Identifier(BigStationSigns.MOD_ID, "textures/gui/hanging_signs/gray");
     public static final Identifier RED_SIGN_TEXTURE = new Identifier(BigStationSigns.MOD_ID, "entity/signs/red");

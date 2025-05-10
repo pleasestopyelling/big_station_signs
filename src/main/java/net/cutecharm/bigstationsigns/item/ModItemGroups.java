@@ -20,6 +20,8 @@ public class ModItemGroups {
             .entries((displayContext, entries) -> {
         //Small station signs go here (basically all the terraform signs)
         entries.add(ModItems.GRAY_SIGN);
+        entries.add(ModItems.GRAY_SIGN_B);
+        entries.add(ModItems.GRAY_SIGN_C);
         entries.add(ModItems.HANGING_GRAY_SIGN);
         entries.add(ModItems.RED_SIGN);
         entries.add(ModItems.HANGING_RED_SIGN);
