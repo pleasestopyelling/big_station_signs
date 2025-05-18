@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-10T14:31:58.8304798	Big Station Signs/Model Definitions
+// 1.20.1	2025-05-18T11:51:54.3755849	Big Station Signs/Model Definitions
 a3054e1115637e1658503dfabc36c56427d02453 assets\big-station-signs\models\item\cyan_sign_b.json
 2a55abad4d572cf05f8b24fe231148b7e59e877a assets\big-station-signs\models\item\purple_sign_d.json
 43a8f38e4f64ce1bcc53e206d6cfbd5ddf2d2f3c assets\big-station-signs\models\item\white_sign.json
@@ -46,6 +46,6 @@ f323eca91873e2e777739e70061a182724185b22 assets\big-station-signs\models\item\bl
 fc1d46721b8850b2a6ebb528fdea2eabf32aa142 assets\big-station-signs\models\item\red_hanging_sign.json
 44a15feb8f5bfb414fb76f6e7cf1b0bd789deb94 assets\big-station-signs\models\item\cyan_sign.json
 3ab5e3f822f6944a2fed7a6094580434c721167b assets\big-station-signs\models\item\orange_hanging_sign.json
-b3d46f31b6d5de0bd6a4edb8a88bb258816bb191 assets\big-station-signs\models\item\purple_sign.json
 4e9a12b5290a0b1e9dc7a16a56f4cd2a50d66826 assets\big-station-signs\models\item\red_sign.json
+b3d46f31b6d5de0bd6a4edb8a88bb258816bb191 assets\big-station-signs\models\item\purple_sign.json
 eeabac8387348cb0561b651f62e86986c397f62b assets\big-station-signs\models\item\blue_hanging_sign.json

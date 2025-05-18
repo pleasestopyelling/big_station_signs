@@ -98,7 +98,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN);
         addDrop(ModBlocks.GRAY_BIG_STATION_SIGN);
         addDrop(ModBlocks.GRAY_BIG_STATION_SIGN_B);
-        addDrop(ModBlocks.GRAY_BIG_STATION_SIGN_C);
         addDrop(ModBlocks.BLACK_BIG_STATION_SIGN);
         addDrop(ModBlocks.BROWN_BIG_STATION_SIGN);
         addDrop(ModBlocks.RED_BIG_STATION_SIGN);

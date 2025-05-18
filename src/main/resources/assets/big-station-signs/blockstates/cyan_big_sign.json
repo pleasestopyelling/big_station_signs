@@ -1,16 +1,52 @@
 {
   "variants": {
-    "facing=north":  {
+    "facing=north,east=false,west=false":  {
       "model": "big-station-signs:block/cyan_big_sign", "y": 180, "uvlock": false
     },
-    "facing=east":  {
+    "facing=north,east=false,west=true":  {
+      "model": "big-station-signs:block/cyan_big_sign_c", "y": 180, "uvlock": false
+    },
+    "facing=north,east=true,west=false":  {
+      "model": "big-station-signs:block/cyan_big_sign_b", "y": 180, "uvlock": false
+    },
+    "facing=north,east=true,west=true":  {
+      "model": "big-station-signs:block/cyan_big_sign_d", "y": 180, "uvlock": false
+    },
+    "facing=east,south=false,north=false":  {
       "model": "big-station-signs:block/cyan_big_sign", "y": 270, "uvlock": false
     },
-    "facing=south":  {
+    "facing=east,south=false,north=true":  {
+      "model": "big-station-signs:block/cyan_big_sign_c", "y": 270, "uvlock": false
+    },
+    "facing=east,south=true,north=false":  {
+      "model": "big-station-signs:block/cyan_big_sign_b", "y": 270, "uvlock": false
+    },
+    "facing=east,south=true,north=true":  {
+      "model": "big-station-signs:block/cyan_big_sign_d", "y": 270, "uvlock": false
+    },
+    "facing=south,east=false,west=false":  {
       "model": "big-station-signs:block/cyan_big_sign", "uvlock": false
     },
-    "facing=west":  {
+    "facing=south,east=true,west=false":  {
+      "model": "big-station-signs:block/cyan_big_sign_c", "uvlock": false
+    },
+    "facing=south,east=false,west=true":  {
+      "model": "big-station-signs:block/cyan_big_sign_b", "uvlock": false
+    },
+    "facing=south,east=true,west=true":  {
+      "model": "big-station-signs:block/cyan_big_sign_d", "uvlock": false
+    },
+    "facing=west,south=false,north=false":  {
       "model": "big-station-signs:block/cyan_big_sign", "y": 90, "uvlock": false
+    },
+    "facing=west,south=true,north=false":  {
+      "model": "big-station-signs:block/cyan_big_sign_c", "y": 90, "uvlock": false
+    },
+    "facing=west,south=false,north=true":  {
+      "model": "big-station-signs:block/cyan_big_sign_b", "y": 90, "uvlock": false
+    },
+    "facing=west,south=true,north=true":  {
+      "model": "big-station-signs:block/cyan_big_sign_d", "y": 90, "uvlock": false
     }
   }
 }

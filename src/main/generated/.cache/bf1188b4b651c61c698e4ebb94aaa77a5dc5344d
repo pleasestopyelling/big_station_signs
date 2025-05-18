@@ -1,7 +1,7 @@
-// 1.20.1	2025-05-10T14:31:58.8464381	Big Station Signs/Block Loot Tables
-e88e410b979dd2809d65d4af6179f392f2ed5ba6 data\big-station-signs\loot_tables\blocks\light_gray_hanging_sign.json
+// 1.20.1	2025-05-18T11:51:54.386555	Big Station Signs/Block Loot Tables
 4994344a98a65107324b4077821be2167a68e5d1 data\big-station-signs\loot_tables\blocks\white_standing_sign.json
-8ab22e5b4cef901a80598b271ebb1f69221fdc15 data\big-station-signs\loot_tables\blocks\gray_big_sign.json
+e88e410b979dd2809d65d4af6179f392f2ed5ba6 data\big-station-signs\loot_tables\blocks\light_gray_hanging_sign.json
+8f8f1b8faa59544144c84a3370ec679dd03f6c5a data\big-station-signs\loot_tables\blocks\gray_big_sign.json
 99d01854de66e103835689a50a81eac64c935c66 data\big-station-signs\loot_tables\blocks\lime_hanging_sign.json
 3c6ea330dea1ed5082fbc0b92e62555a3a3f5f41 data\big-station-signs\loot_tables\blocks\white_hanging_sign.json
 7d22e579df0c9e4fa6f90ca475632664eaee9e4c data\big-station-signs\loot_tables\blocks\light_blue_big_sign.json
