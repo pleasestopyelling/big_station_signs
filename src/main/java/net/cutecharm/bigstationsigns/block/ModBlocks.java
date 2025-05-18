@@ -234,12 +234,12 @@ public class ModBlocks {
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(GRAY_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
     public static final Block BLACK_BIG_STATION_SIGN = registerBlock("black_big_sign",
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
-    public static final Block BLACK_BIG_STATION_SIGN_B = registerBlock("black_big_sign_b",
-            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(BLACK_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
-    public static final Block BLACK_BIG_STATION_SIGN_C = registerBlock("black_big_sign_c",
-            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(BLACK_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
-    public static final Block BLACK_BIG_STATION_SIGN_D = registerBlock("black_big_sign_d",
-            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(BLACK_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
+    //public static final Block BLACK_BIG_STATION_SIGN_B = registerBlock("black_big_sign_b",
+    //        new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(BLACK_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
+    //public static final Block BLACK_BIG_STATION_SIGN_C = registerBlock("black_big_sign_c",
+    //        new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(BLACK_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
+    //public static final Block BLACK_BIG_STATION_SIGN_D = registerBlock("black_big_sign_d",
+    //        new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).dropsLike(BLACK_BIG_STATION_SIGN).noBlockBreakParticles().nonOpaque()));
     public static final Block BROWN_BIG_STATION_SIGN = registerBlock("brown_big_sign",
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
     public static final Block RED_BIG_STATION_SIGN = registerBlock("red_big_sign",

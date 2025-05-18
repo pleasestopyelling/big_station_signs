@@ -315,18 +315,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(ModBlocks.GRAY_BIG_STATION_SIGN_B)
                 .criterion(hasItem(ModBlocks.GRAY_BIG_STATION_SIGN_B), conditionsFromItem(ModBlocks.GRAY_BIG_STATION_SIGN_B))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GRAY_BIG_STATION_SIGN_C)));
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_BIG_STATION_SIGN_B, 1)
-                .input(ModBlocks.BLACK_BIG_STATION_SIGN)
-                .criterion(hasItem(ModBlocks.BLACK_BIG_STATION_SIGN), conditionsFromItem(ModBlocks.BLACK_BIG_STATION_SIGN))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BLACK_BIG_STATION_SIGN_B)));
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_BIG_STATION_SIGN_C, 1)
-                .input(ModBlocks.BLACK_BIG_STATION_SIGN_B)
-                .criterion(hasItem(ModBlocks.BLACK_BIG_STATION_SIGN_B), conditionsFromItem(ModBlocks.BLACK_BIG_STATION_SIGN_B))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BLACK_BIG_STATION_SIGN_C)));
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_BIG_STATION_SIGN_D, 1)
-                .input(ModBlocks.BLACK_BIG_STATION_SIGN_C)
-                .criterion(hasItem(ModBlocks.BLACK_BIG_STATION_SIGN_C), conditionsFromItem(ModBlocks.BLACK_BIG_STATION_SIGN_C))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BLACK_BIG_STATION_SIGN_D)));
+        //ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_BIG_STATION_SIGN_B, 1)
+        //        .input(ModBlocks.BLACK_BIG_STATION_SIGN)
+        //        .criterion(hasItem(ModBlocks.BLACK_BIG_STATION_SIGN), conditionsFromItem(ModBlocks.BLACK_BIG_STATION_SIGN))
+        //        .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BLACK_BIG_STATION_SIGN_B)));
+        //ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_BIG_STATION_SIGN_C, 1)
+        //        .input(ModBlocks.BLACK_BIG_STATION_SIGN_B)
+        //        .criterion(hasItem(ModBlocks.BLACK_BIG_STATION_SIGN_B), conditionsFromItem(ModBlocks.BLACK_BIG_STATION_SIGN_B))
+        //        .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BLACK_BIG_STATION_SIGN_C)));
+        //ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.BLACK_BIG_STATION_SIGN_D, 1)
+        //        .input(ModBlocks.BLACK_BIG_STATION_SIGN_C)
+        //        .criterion(hasItem(ModBlocks.BLACK_BIG_STATION_SIGN_C), conditionsFromItem(ModBlocks.BLACK_BIG_STATION_SIGN_C))
+        //        .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.BLACK_BIG_STATION_SIGN_D)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.ORANGE_BIG_STATION_SIGN_B, 1)
                 .input(ModBlocks.ORANGE_BIG_STATION_SIGN)
                 .criterion(hasItem(ModBlocks.ORANGE_BIG_STATION_SIGN), conditionsFromItem(ModBlocks.ORANGE_BIG_STATION_SIGN))

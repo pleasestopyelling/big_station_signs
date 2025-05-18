@@ -1,14 +1,14 @@
 {
 	"schemaVersion": 1,
 	"id": "big-station-signs",
-	"version": "0.2.0",
+	"version": "0.1.1",
 	"name": "Big Station Signs",
 	"description": "Signs with some designs from the UK train network, with big text",
 	"authors": [
 		"please stop yelling"
 	],
 	"contact": {
-		"homepage": "tbd",
+		"homepage": "https://modrinth.com/mod/big-station-signs",
 		"sources": "https://github.com/pleasestopyelling/big_station_signs"
 	},
 	"license": "MIT",

@@ -1,5 +1,6 @@
 package net.cutecharm.bigstationsigns.block;
 
+import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.cutecharm.bigstationsigns.block.entity.BigStationSignBlockEntity;
 import net.cutecharm.bigstationsigns.screen.BigStationSignScreen;
 import net.minecraft.block.*;
@@ -19,19 +20,26 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
 public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEntityProvider {
 
     protected GrayBigStationSign(Settings settings) {
         super(settings);
-        setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
+        setDefaultState(getDefaultState()
+                .with(Properties.HORIZONTAL_FACING, Direction.NORTH)
+                .with(Properties.NORTH, false)
+                .with(Properties.EAST, false)
+                .with(Properties.SOUTH, false)
+                .with(Properties.WEST, false)
+        );
     }
 
     //directional block placement settings(from HorizontalFacingBlock)
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(Properties.HORIZONTAL_FACING);
+        builder.add(Properties.HORIZONTAL_FACING, Properties.NORTH, Properties.EAST, Properties.SOUTH, Properties.WEST);
     }
 
     @Override
@@ -75,8 +83,113 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
     }
 
     @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        Direction facing = state.get(FACING);
+        boolean placeConnectionNorth = false;
+        boolean placeConnectionEast = false;
+        boolean placeConnectionSouth = false;
+        boolean placeConnectionWest = false;
+        Block neighboringBlock = Blocks.AIR;
+        Block neighboringBlock2 = Blocks.AIR;
+        //slightly nicer way of writing the getPlacementState because yes
+        switch(facing) {
+            case NORTH, SOUTH -> {
+                BlockPos neighboringBlockPos = pos.add(1,0,0);
+                BlockPos neighboringBlockPos2 = pos.add(-1,0,0);
+                neighboringBlock = world.getBlockState(neighboringBlockPos).getBlock();
+                neighboringBlock2 = world.getBlockState(neighboringBlockPos2).getBlock();
+                if (neighboringBlock instanceof GrayBigStationSign) {
+                    placeConnectionEast = true;
+                }
+                if (neighboringBlock2 instanceof GrayBigStationSign) {
+                    placeConnectionWest = true;
+                }
+            }
+            case EAST, WEST -> {
+                BlockPos neighboringBlockPos = pos.add(0,0,1);
+                BlockPos neighboringBlockPos2 = pos.add(0,0,-1);
+                neighboringBlock = world.getBlockState(neighboringBlockPos).getBlock();
+                neighboringBlock2 = world.getBlockState(neighboringBlockPos2).getBlock();
+                if (neighboringBlock instanceof GrayBigStationSign) {
+                    placeConnectionSouth = true;
+                }
+                if (neighboringBlock2 instanceof GrayBigStationSign) {
+                    placeConnectionNorth = true;
+                }
+            }
+        }
+
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos)
+                .with(Properties.NORTH,placeConnectionNorth)
+                .with(Properties.EAST,placeConnectionEast)
+                .with(Properties.SOUTH,placeConnectionSouth)
+                .with(Properties.WEST,placeConnectionWest);
+    }
+
+    @Override
     public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
-        return super.getPlacementState(ctx).with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+        boolean placeConnectionNorth = false;
+        boolean placeConnectionEast = false;
+        boolean placeConnectionSouth = false;
+        boolean placeConnectionWest = false;
+        Block neighboringBlock = Blocks.AIR;
+        Block neighboringBlock2 = Blocks.AIR;
+        Direction playerFacing = ctx.getHorizontalPlayerFacing().getOpposite();
+        //connecting the signs to each other
+        if (playerFacing == Direction.NORTH) {
+            //get position of the block on either side
+            BlockPos neighboringBlockPos = ctx.getBlockPos().add(1,0,0);
+            BlockPos neighboringBlockPos2 = ctx.getBlockPos().add(-1,0,0);
+            //get what block it is
+            neighboringBlock = ctx.getWorld().getBlockState(neighboringBlockPos).getBlock();
+            neighboringBlock2 = ctx.getWorld().getBlockState(neighboringBlockPos2).getBlock();
+            //if its another big station sign, connect them
+            if (neighboringBlock instanceof GrayBigStationSign) {
+                placeConnectionEast = true;
+            }
+            if (neighboringBlock2 instanceof GrayBigStationSign) {
+                placeConnectionWest = true;
+            }
+        } else if (playerFacing == Direction.SOUTH) {
+            BlockPos neighboringBlockPos = ctx.getBlockPos().add(1,0,0);
+            BlockPos neighboringBlockPos2 = ctx.getBlockPos().add(-1,0,0);
+            neighboringBlock = ctx.getWorld().getBlockState(neighboringBlockPos).getBlock();
+            neighboringBlock2 = ctx.getWorld().getBlockState(neighboringBlockPos2).getBlock();
+            if (neighboringBlock instanceof GrayBigStationSign) {
+                placeConnectionEast = true;
+            }
+            if (neighboringBlock2 instanceof GrayBigStationSign) {
+                placeConnectionWest = true;
+            }
+        } else if (playerFacing == Direction.EAST) {
+            BlockPos neighboringBlockPos = ctx.getBlockPos().add(0,0,1);
+            BlockPos neighboringBlockPos2 = ctx.getBlockPos().add(0,0,-1);
+            neighboringBlock = ctx.getWorld().getBlockState(neighboringBlockPos).getBlock();
+            neighboringBlock2 = ctx.getWorld().getBlockState(neighboringBlockPos2).getBlock();
+            if (neighboringBlock instanceof GrayBigStationSign) {
+                placeConnectionSouth = true;
+            }
+            if (neighboringBlock2 instanceof GrayBigStationSign) {
+                placeConnectionNorth = true;
+            }
+        } else if (playerFacing == Direction.WEST) {
+            BlockPos neighboringBlockPos = ctx.getBlockPos().add(0,0,1);
+            BlockPos neighboringBlockPos2 = ctx.getBlockPos().add(0,0,-1);
+            neighboringBlock = ctx.getWorld().getBlockState(neighboringBlockPos).getBlock();
+            neighboringBlock2 = ctx.getWorld().getBlockState(neighboringBlockPos2).getBlock();
+            if (neighboringBlock instanceof GrayBigStationSign) {
+                placeConnectionSouth = true;
+            }
+            if (neighboringBlock2 instanceof GrayBigStationSign) {
+                placeConnectionNorth = true;
+            }
+        }
+        return super.getPlacementState(ctx)
+                .with(Properties.HORIZONTAL_FACING, playerFacing)
+                .with(Properties.NORTH, placeConnectionNorth)
+                .with(Properties.EAST, placeConnectionEast)
+                .with(Properties.SOUTH, placeConnectionSouth)
+                .with(Properties.WEST, placeConnectionWest);
     }
 
     //Puts the block entity at the block

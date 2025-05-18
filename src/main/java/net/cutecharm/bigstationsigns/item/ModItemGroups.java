@@ -84,9 +84,6 @@ public class ModItemGroups {
                         entries.add(ModBlocks.GRAY_BIG_STATION_SIGN_B);
                         entries.add(ModBlocks.GRAY_BIG_STATION_SIGN_C);
                         entries.add(ModBlocks.BLACK_BIG_STATION_SIGN);
-                        entries.add(ModBlocks.BLACK_BIG_STATION_SIGN_B);
-                        entries.add(ModBlocks.BLACK_BIG_STATION_SIGN_C);
-                        entries.add(ModBlocks.BLACK_BIG_STATION_SIGN_D);
                         entries.add(ModBlocks.BROWN_BIG_STATION_SIGN);
                         entries.add(ModBlocks.RED_BIG_STATION_SIGN);
                         entries.add(ModBlocks.ORANGE_BIG_STATION_SIGN);
