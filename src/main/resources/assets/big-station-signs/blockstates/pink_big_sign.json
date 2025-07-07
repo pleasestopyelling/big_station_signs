@@ -7,7 +7,7 @@
       "model": "big-station-signs:block/pink_big_sign", "y": 180, "uvlock": false
     },
     "facing=north,east=true,west=false":  {
-      "model": "big-station-signs:block/pink_big_sign", "y": 180, "uvlock": false
+      "model": "big-station-signs:block/pink_big_sign_b", "y": 180, "uvlock": false
     },
     "facing=north,east=true,west=true":  {
       "model": "big-station-signs:block/pink_big_sign_b", "y": 180, "uvlock": false
