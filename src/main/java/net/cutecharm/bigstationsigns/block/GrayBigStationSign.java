@@ -82,8 +82,19 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
                     width2 += 1;
                 }
                 blockEntity.signWidth = min(width2,width1);
-                BigStationSigns.LOGGER.info("width: " + blockEntity.signWidth);
             }
+            case EAST, WEST -> {
+            while (world.getBlockEntity(checkPos) instanceof BigStationSignBlockEntity) {
+                checkPos = checkPos.add(0,0,1);
+                width1 += 1;
+            }
+            checkPos = pos;
+            while (world.getBlockEntity(checkPos) instanceof BigStationSignBlockEntity) {
+                checkPos = checkPos.add(0,0,-1);
+                width2 += 1;
+            }
+            blockEntity.signWidth = min(width2,width1);
+        }
 
         }
         if (!world.isClient) {
@@ -116,10 +127,6 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
         boolean placeConnectionWest = false;
         Block neighboringBlock = Blocks.AIR;
         Block neighboringBlock2 = Blocks.AIR;
-//        BigStationSignBlockEntity currentBlockEntity = (BigStationSignBlockEntity) world.getBlockEntity(pos);
-//        int width1 = 1;
-//        int width2 = 1;
-
         //slightly nicer way of writing the getPlacementState because yes
 
 
@@ -127,8 +134,6 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
             case NORTH, SOUTH -> {
                 BlockPos neighboringBlockPos = pos.add(1,0,0);
                 BlockPos neighboringBlockPos2 = pos.add(-1,0,0);
-//                BlockEntity neighboringBlockEntity = world.getBlockEntity((neighboringBlockPos));
-//                BlockEntity neighboringBlockEntity2 = world.getBlockEntity((neighboringBlockPos2));
                 neighboringBlock = world.getBlockState(neighboringBlockPos).getBlock();
                 neighboringBlock2 = world.getBlockState(neighboringBlockPos2).getBlock();
                 if (neighboringBlock instanceof GrayBigStationSign) {
@@ -137,21 +142,10 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
                 if (neighboringBlock2 instanceof GrayBigStationSign) {
                     placeConnectionWest = true;
                 }
-//                if (neighboringBlockEntity instanceof BigStationSignBlockEntity) {
-//                    BigStationSignBlockEntity neighborBlockEntity = (BigStationSignBlockEntity) neighboringBlockEntity;
-//                    width1 = neighborBlockEntity.signWidth + 1;
-//                }
-//                if (neighboringBlockEntity2 instanceof BigStationSignBlockEntity) {
-//                    BigStationSignBlockEntity neighborBlockEntity2 = (BigStationSignBlockEntity) neighboringBlockEntity2;
-//                    width2 = neighborBlockEntity2.signWidth + 1;
-//                }
-//                currentBlockEntity.signWidth = min(width1, width2);
             }
             case EAST, WEST -> {
                 BlockPos neighboringBlockPos = pos.add(0,0,1);
                 BlockPos neighboringBlockPos2 = pos.add(0,0,-1);
-//                BlockEntity neighboringBlockEntity = world.getBlockEntity((neighboringBlockPos));
-//                BlockEntity neighboringBlockEntity2 = world.getBlockEntity((neighboringBlockPos2));
                 neighboringBlock = world.getBlockState(neighboringBlockPos).getBlock();
                 neighboringBlock2 = world.getBlockState(neighboringBlockPos2).getBlock();
                 if (neighboringBlock instanceof GrayBigStationSign) {
@@ -160,15 +154,6 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
                 if (neighboringBlock2 instanceof GrayBigStationSign) {
                     placeConnectionNorth = true;
                 }
-//                if (neighboringBlockEntity instanceof BigStationSignBlockEntity) {
-//                    BigStationSignBlockEntity neighborBlockEntity = (BigStationSignBlockEntity) neighboringBlockEntity;
-//                    width1 = neighborBlockEntity.signWidth + 1;
-//                }
-//                if (neighboringBlockEntity2 instanceof BigStationSignBlockEntity) {
-//                    BigStationSignBlockEntity neighborBlockEntity2 = (BigStationSignBlockEntity) neighboringBlockEntity2;
-//                    width2 = neighborBlockEntity2.signWidth + 1;
-//                }
-//                currentBlockEntity.signWidth = min(width1, width2);
             }
         }
 
@@ -193,6 +178,5 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
         return new BigStationSignBlockEntity(pos, state);
     }
 
-    //Opens gui
 
 }
