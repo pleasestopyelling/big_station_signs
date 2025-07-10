@@ -23,6 +23,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
+import static java.lang.Math.min;
+
 public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEntityProvider {
 
     protected GrayBigStationSign(Settings settings) {
@@ -35,6 +37,7 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
                 .with(Properties.WEST, false)
         );
     }
+
 
     //directional block placement settings(from HorizontalFacingBlock)
     @Override
@@ -62,6 +65,27 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        Direction facing = state.get(FACING);
+        BlockPos checkPos = pos;
+        BigStationSignBlockEntity blockEntity = (BigStationSignBlockEntity) world.getBlockEntity(pos);
+        int width1 = 0;
+        int width2 = 0;
+        switch (facing) {
+            case NORTH, SOUTH -> {
+                while (world.getBlockEntity(checkPos) instanceof BigStationSignBlockEntity) {
+                    checkPos = checkPos.add(1,0,0);
+                    width1 += 1;
+                }
+                checkPos = pos;
+                while (world.getBlockEntity(checkPos) instanceof BigStationSignBlockEntity) {
+                    checkPos = checkPos.add(-1,0,0);
+                    width2 += 1;
+                }
+                blockEntity.signWidth = min(width2,width1);
+                BigStationSigns.LOGGER.info("width: " + blockEntity.signWidth);
+            }
+
+        }
         if (!world.isClient) {
             return ActionResult.SUCCESS;
         }
@@ -82,23 +106,29 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
 
     }
 
+
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         Direction facing = state.get(FACING);
-        int signWidth = 1;
         boolean placeConnectionNorth = false;
         boolean placeConnectionEast = false;
         boolean placeConnectionSouth = false;
         boolean placeConnectionWest = false;
         Block neighboringBlock = Blocks.AIR;
         Block neighboringBlock2 = Blocks.AIR;
+//        BigStationSignBlockEntity currentBlockEntity = (BigStationSignBlockEntity) world.getBlockEntity(pos);
+//        int width1 = 1;
+//        int width2 = 1;
 
         //slightly nicer way of writing the getPlacementState because yes
+
 
         switch(facing) {
             case NORTH, SOUTH -> {
                 BlockPos neighboringBlockPos = pos.add(1,0,0);
                 BlockPos neighboringBlockPos2 = pos.add(-1,0,0);
+//                BlockEntity neighboringBlockEntity = world.getBlockEntity((neighboringBlockPos));
+//                BlockEntity neighboringBlockEntity2 = world.getBlockEntity((neighboringBlockPos2));
                 neighboringBlock = world.getBlockState(neighboringBlockPos).getBlock();
                 neighboringBlock2 = world.getBlockState(neighboringBlockPos2).getBlock();
                 if (neighboringBlock instanceof GrayBigStationSign) {
@@ -107,21 +137,21 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
                 if (neighboringBlock2 instanceof GrayBigStationSign) {
                     placeConnectionWest = true;
                 }
-
-                while (neighboringBlock != Blocks.AIR) {
-                    BlockPos neighbouringBlockPos = pos.add(1,0,0);
-                    neighboringBlock = world.getBlockState(neighboringBlockPos).getBlock();
-                    signWidth += 1;
-                }
-                while (neighboringBlock2 != Blocks.AIR) {
-                    BlockPos neighbouringBlockPos2 = pos.add(-1,0,0);
-                    neighboringBlock2 = world.getBlockState(neighboringBlockPos2).getBlock();
-                    signWidth += 1;
-                }
+//                if (neighboringBlockEntity instanceof BigStationSignBlockEntity) {
+//                    BigStationSignBlockEntity neighborBlockEntity = (BigStationSignBlockEntity) neighboringBlockEntity;
+//                    width1 = neighborBlockEntity.signWidth + 1;
+//                }
+//                if (neighboringBlockEntity2 instanceof BigStationSignBlockEntity) {
+//                    BigStationSignBlockEntity neighborBlockEntity2 = (BigStationSignBlockEntity) neighboringBlockEntity2;
+//                    width2 = neighborBlockEntity2.signWidth + 1;
+//                }
+//                currentBlockEntity.signWidth = min(width1, width2);
             }
             case EAST, WEST -> {
                 BlockPos neighboringBlockPos = pos.add(0,0,1);
                 BlockPos neighboringBlockPos2 = pos.add(0,0,-1);
+//                BlockEntity neighboringBlockEntity = world.getBlockEntity((neighboringBlockPos));
+//                BlockEntity neighboringBlockEntity2 = world.getBlockEntity((neighboringBlockPos2));
                 neighboringBlock = world.getBlockState(neighboringBlockPos).getBlock();
                 neighboringBlock2 = world.getBlockState(neighboringBlockPos2).getBlock();
                 if (neighboringBlock instanceof GrayBigStationSign) {
@@ -130,8 +160,18 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
                 if (neighboringBlock2 instanceof GrayBigStationSign) {
                     placeConnectionNorth = true;
                 }
+//                if (neighboringBlockEntity instanceof BigStationSignBlockEntity) {
+//                    BigStationSignBlockEntity neighborBlockEntity = (BigStationSignBlockEntity) neighboringBlockEntity;
+//                    width1 = neighborBlockEntity.signWidth + 1;
+//                }
+//                if (neighboringBlockEntity2 instanceof BigStationSignBlockEntity) {
+//                    BigStationSignBlockEntity neighborBlockEntity2 = (BigStationSignBlockEntity) neighboringBlockEntity2;
+//                    width2 = neighborBlockEntity2.signWidth + 1;
+//                }
+//                currentBlockEntity.signWidth = min(width1, width2);
             }
         }
+
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos)
                 .with(Properties.NORTH,placeConnectionNorth)
@@ -142,68 +182,9 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
 
     @Override
     public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
-        boolean placeConnectionNorth = false;
-        boolean placeConnectionEast = false;
-        boolean placeConnectionSouth = false;
-        boolean placeConnectionWest = false;
-        Block neighboringBlock = Blocks.AIR;
-        Block neighboringBlock2 = Blocks.AIR;
         Direction playerFacing = ctx.getHorizontalPlayerFacing().getOpposite();
-        //connecting the signs to each other
-        if (playerFacing == Direction.NORTH) {
-            //get position of the block on either side
-            BlockPos neighboringBlockPos = ctx.getBlockPos().add(1,0,0);
-            BlockPos neighboringBlockPos2 = ctx.getBlockPos().add(-1,0,0);
-            //get what block it is
-            neighboringBlock = ctx.getWorld().getBlockState(neighboringBlockPos).getBlock();
-            neighboringBlock2 = ctx.getWorld().getBlockState(neighboringBlockPos2).getBlock();
-            //if its another big station sign, connect them
-            if (neighboringBlock instanceof GrayBigStationSign) {
-                placeConnectionEast = true;
-            }
-            if (neighboringBlock2 instanceof GrayBigStationSign) {
-                placeConnectionWest = true;
-            }
-        } else if (playerFacing == Direction.SOUTH) {
-            BlockPos neighboringBlockPos = ctx.getBlockPos().add(1,0,0);
-            BlockPos neighboringBlockPos2 = ctx.getBlockPos().add(-1,0,0);
-            neighboringBlock = ctx.getWorld().getBlockState(neighboringBlockPos).getBlock();
-            neighboringBlock2 = ctx.getWorld().getBlockState(neighboringBlockPos2).getBlock();
-            if (neighboringBlock instanceof GrayBigStationSign) {
-                placeConnectionEast = true;
-            }
-            if (neighboringBlock2 instanceof GrayBigStationSign) {
-                placeConnectionWest = true;
-            }
-        } else if (playerFacing == Direction.EAST) {
-            BlockPos neighboringBlockPos = ctx.getBlockPos().add(0,0,1);
-            BlockPos neighboringBlockPos2 = ctx.getBlockPos().add(0,0,-1);
-            neighboringBlock = ctx.getWorld().getBlockState(neighboringBlockPos).getBlock();
-            neighboringBlock2 = ctx.getWorld().getBlockState(neighboringBlockPos2).getBlock();
-            if (neighboringBlock instanceof GrayBigStationSign) {
-                placeConnectionSouth = true;
-            }
-            if (neighboringBlock2 instanceof GrayBigStationSign) {
-                placeConnectionNorth = true;
-            }
-        } else if (playerFacing == Direction.WEST) {
-            BlockPos neighboringBlockPos = ctx.getBlockPos().add(0,0,1);
-            BlockPos neighboringBlockPos2 = ctx.getBlockPos().add(0,0,-1);
-            neighboringBlock = ctx.getWorld().getBlockState(neighboringBlockPos).getBlock();
-            neighboringBlock2 = ctx.getWorld().getBlockState(neighboringBlockPos2).getBlock();
-            if (neighboringBlock instanceof GrayBigStationSign) {
-                placeConnectionSouth = true;
-            }
-            if (neighboringBlock2 instanceof GrayBigStationSign) {
-                placeConnectionNorth = true;
-            }
-        }
         return super.getPlacementState(ctx)
-                .with(Properties.HORIZONTAL_FACING, playerFacing)
-                .with(Properties.NORTH, placeConnectionNorth)
-                .with(Properties.EAST, placeConnectionEast)
-                .with(Properties.SOUTH, placeConnectionSouth)
-                .with(Properties.WEST, placeConnectionWest);
+                  .with(Properties.HORIZONTAL_FACING, playerFacing);
     }
 
     //Puts the block entity at the block

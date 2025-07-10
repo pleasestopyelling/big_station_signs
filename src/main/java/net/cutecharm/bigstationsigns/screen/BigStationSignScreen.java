@@ -83,7 +83,7 @@ public class BigStationSignScreen extends Screen {
         textFieldWidget = new TextFieldWidget(this.textRenderer, this.x, this.y+15, 176, 20,
                 Text.literal(signMessage));
         textFieldWidget.setText(signMessage);
-        textFieldWidget.setMaxLength(signWidth*3);
+        textFieldWidget.setMaxLength((signWidth-1)*6+3);
 
         buttonWhite = ButtonWidget.builder(Text.literal(""),
                 button -> {
