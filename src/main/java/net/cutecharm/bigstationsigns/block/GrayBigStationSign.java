@@ -85,13 +85,16 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         Direction facing = state.get(FACING);
+        int signWidth = 1;
         boolean placeConnectionNorth = false;
         boolean placeConnectionEast = false;
         boolean placeConnectionSouth = false;
         boolean placeConnectionWest = false;
         Block neighboringBlock = Blocks.AIR;
         Block neighboringBlock2 = Blocks.AIR;
+
         //slightly nicer way of writing the getPlacementState because yes
+
         switch(facing) {
             case NORTH, SOUTH -> {
                 BlockPos neighboringBlockPos = pos.add(1,0,0);
@@ -103,6 +106,17 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
                 }
                 if (neighboringBlock2 instanceof GrayBigStationSign) {
                     placeConnectionWest = true;
+                }
+
+                while (neighboringBlock != Blocks.AIR) {
+                    BlockPos neighbouringBlockPos = pos.add(1,0,0);
+                    neighboringBlock = world.getBlockState(neighboringBlockPos).getBlock();
+                    signWidth += 1;
+                }
+                while (neighboringBlock2 != Blocks.AIR) {
+                    BlockPos neighbouringBlockPos2 = pos.add(-1,0,0);
+                    neighboringBlock2 = world.getBlockState(neighboringBlockPos2).getBlock();
+                    signWidth += 1;
                 }
             }
             case EAST, WEST -> {

@@ -19,6 +19,7 @@ public class BigStationSignBlockEntity extends BlockEntity {
     public boolean signItalic = false;
     public boolean signUnderline = false;
     public BigStationSigns.COLOR signColor = BigStationSigns.COLOR.BLACK;
+    public int signWidth = 1;
 
     //getting the data from the server
     public void setSignMessage(String message) {
@@ -74,6 +75,10 @@ public class BigStationSignBlockEntity extends BlockEntity {
     public BigStationSignBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.BIG_STATION_SIGN_BLOCK_ENTITY, pos, state);
     }
+
+    public void setSignWidth(int width) {
+        signWidth = width;
+    }
     //direction to render the text
     public Direction getDirection() {
         return facing;
@@ -109,6 +114,7 @@ public class BigStationSignBlockEntity extends BlockEntity {
             default -> writeDirection = 0;
         }
         nbt.putInt("direction", writeDirection);
+        nbt.putInt("width", signWidth);
         nbt.putString("message", signMessage);
         nbt.putInt("color_index", colorToInteger);
         nbt.putBoolean("bold", signBold);

@@ -49,6 +49,7 @@ public class BigStationSignScreen extends Screen {
     private Boolean signMessageItalic = false;
     private Boolean signMessageUnderline = false;
     private String signMessage = "";
+    private int signWidth = 1;
 
     private int x;
     private int y;
@@ -73,6 +74,7 @@ public class BigStationSignScreen extends Screen {
         signMessageBold = blockEntity.signBold;
         signMessageItalic = blockEntity.signItalic;
         signMessageUnderline = blockEntity.signUnderline;
+        signWidth = blockEntity.signWidth;
 
         this.x = (this.width - this.referenceWidth)/2;
         this.y = (this.height - this.referenceHeight)/2;
@@ -81,7 +83,7 @@ public class BigStationSignScreen extends Screen {
         textFieldWidget = new TextFieldWidget(this.textRenderer, this.x, this.y+15, 176, 20,
                 Text.literal(signMessage));
         textFieldWidget.setText(signMessage);
-        textFieldWidget.setMaxLength(32);
+        textFieldWidget.setMaxLength(signWidth*3);
 
         buttonWhite = ButtonWidget.builder(Text.literal(""),
                 button -> {
