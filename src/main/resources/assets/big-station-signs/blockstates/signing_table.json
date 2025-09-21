@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north":  {
+      "model": "big-station-signs:block/signing_table", "uvlock": false
+    },
+    "facing=east":  {
+      "model": "big-station-signs:block/signing_table", "y": 90, "uvlock": false
+    },
+    "facing=south":  {
+      "model": "big-station-signs:block/signing_table", "y": 180, "uvlock": false
+    },
+    "facing=west":  {
+      "model": "big-station-signs:block/signing_table", "y": 270, "uvlock": false
+    }
+  }
+}

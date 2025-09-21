@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "big-station-signs:signing_table",
     "big-station-signs:oak_big_sign",
     "big-station-signs:birch_big_sign",
     "big-station-signs:jungle_big_sign",
