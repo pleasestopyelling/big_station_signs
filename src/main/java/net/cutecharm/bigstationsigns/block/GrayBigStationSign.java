@@ -1,6 +1,5 @@
 package net.cutecharm.bigstationsigns.block;
 
-import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.cutecharm.bigstationsigns.block.entity.BigStationSignBlockEntity;
 import net.cutecharm.bigstationsigns.screen.BigStationSignScreen;
 import net.minecraft.block.*;
