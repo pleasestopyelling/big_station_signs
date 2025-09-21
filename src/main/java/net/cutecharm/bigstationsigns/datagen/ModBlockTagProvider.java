@@ -16,6 +16,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     //blocks to be mined with pickaxe
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.SIGNING_TABLE);
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
 
                 .add(ModBlocks.WHITE_BIG_STATION_SIGN)

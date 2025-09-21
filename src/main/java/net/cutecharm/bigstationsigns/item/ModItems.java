@@ -1,11 +1,7 @@
 package net.cutecharm.bigstationsigns.item;
 
 import net.cutecharm.bigstationsigns.BigStationSigns;
-import net.cutecharm.bigstationsigns.block.ModBlocks;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.HangingSignItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.SignItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;

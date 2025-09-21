@@ -1,6 +1,5 @@
 package net.cutecharm.bigstationsigns.datagen;
 
-import net.cutecharm.bigstationsigns.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;

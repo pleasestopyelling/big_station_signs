@@ -18,7 +18,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.bigstationsigns"))
                     .icon(() -> new ItemStack(ModBlocks.RED_BIG_STATION_SIGN))
                     .entries((displayContext, entries) -> {
-
+                        entries.add(ModBlocks.SIGNING_TABLE);
                         entries.add(ModBlocks.WHITE_BIG_STATION_SIGN);
                         entries.add(ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN);
                         entries.add(ModBlocks.GRAY_BIG_STATION_SIGN);

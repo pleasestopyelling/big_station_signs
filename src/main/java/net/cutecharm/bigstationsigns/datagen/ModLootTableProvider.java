@@ -11,6 +11,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+        addDrop(ModBlocks.SIGNING_TABLE);
         addDrop(ModBlocks.WHITE_BIG_STATION_SIGN);
         addDrop(ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN);
         addDrop(ModBlocks.GRAY_BIG_STATION_SIGN);

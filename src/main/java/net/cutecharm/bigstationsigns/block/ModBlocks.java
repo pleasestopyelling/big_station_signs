@@ -14,6 +14,8 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
+    public static final Block SIGNING_TABLE = registerBlock("signing_table",
+            new SigningTable(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     //big signs
     public static final Block WHITE_BIG_STATION_SIGN = registerBlock("white_big_sign",
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));

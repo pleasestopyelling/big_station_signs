@@ -21,6 +21,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SIGNING_TABLE, 1)
+                .pattern("asa")
+                .pattern("ici")
+                .pattern("aia")
+                .input('i', IRON_INGOT)
+                .input('c', CRAFTING_TABLE)
+                .input('s', INK_SAC)
+                .input('a', AIR)
+                .criterion(hasItem(CRAFTING_TABLE), conditionsFromItem(CRAFTING_TABLE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.SIGNING_TABLE)));
         //conversion recipes for big signs
         ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.GRAY_BIG_STATION_SIGN_B, 1)
                 .input(ModBlocks.GRAY_BIG_STATION_SIGN)
