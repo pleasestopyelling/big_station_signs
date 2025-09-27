@@ -10,6 +10,7 @@ public class ModItems {
 
     //List of all the items to be registered
     private static Item registerItem(String name, Item item) {
+
         return Registry.register(Registries.ITEM, new Identifier(BigStationSigns.MOD_ID, name), item);
     }
 

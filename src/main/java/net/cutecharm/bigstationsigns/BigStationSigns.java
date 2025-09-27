@@ -6,6 +6,7 @@ import net.cutecharm.bigstationsigns.block.entity.ModBlockEntities;
 import net.cutecharm.bigstationsigns.item.ModItemGroups;
 import net.cutecharm.bigstationsigns.item.ModItems;
 import net.cutecharm.bigstationsigns.network.NetworkingConstants;
+import net.cutecharm.bigstationsigns.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -53,6 +54,7 @@ public class BigStationSigns implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerScreenHandlers();
 
 
 

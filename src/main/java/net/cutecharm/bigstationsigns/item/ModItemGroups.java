@@ -36,6 +36,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PURPLE_BIG_STATION_SIGN);
                         entries.add(ModBlocks.MAGENTA_BIG_STATION_SIGN);
                         entries.add(ModBlocks.PINK_BIG_STATION_SIGN);
+                        entries.add(ModBlocks.CERULEAN_BIG_STATION_SIGN);
                         entries.add(ModBlocks.OAK_BIG_STATION_SIGN);
                         entries.add(ModBlocks.BIRCH_BIG_STATION_SIGN);
                         entries.add(ModBlocks.JUNGLE_BIG_STATION_SIGN);

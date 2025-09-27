@@ -33,6 +33,7 @@ public class ModBlockEntities {
                             ModBlocks.PURPLE_BIG_STATION_SIGN,
                             ModBlocks.MAGENTA_BIG_STATION_SIGN,
                             ModBlocks.PINK_BIG_STATION_SIGN,
+                            ModBlocks.CERULEAN_BIG_STATION_SIGN,
                             ModBlocks.OAK_BIG_STATION_SIGN,
                             ModBlocks.BIRCH_BIG_STATION_SIGN,
                             ModBlocks.JUNGLE_BIG_STATION_SIGN,

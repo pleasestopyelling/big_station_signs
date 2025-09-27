@@ -47,9 +47,13 @@ public class ModBlocks {
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
     public static final Block PURPLE_BIG_STATION_SIGN = registerBlock("purple_big_sign",
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
+    public static final Block PURPLE_BIG_STATION_SIGN_B = registerBlock("purple_big_sign_b",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
     public static final Block MAGENTA_BIG_STATION_SIGN = registerBlock("magenta_big_sign",
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
     public static final Block PINK_BIG_STATION_SIGN = registerBlock("pink_big_sign",
+            new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
+    public static final Block CERULEAN_BIG_STATION_SIGN = registerBlock("cerulean_big_sign",
             new GrayBigStationSign(FabricBlockSettings.copyOf(Blocks.CHAIN).sounds(BlockSoundGroup.CHAIN).noBlockBreakParticles().nonOpaque()));
 
     public static final Block OAK_BIG_STATION_SIGN = registerBlock("oak_big_sign",
