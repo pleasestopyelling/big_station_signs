@@ -20,7 +20,7 @@ public class SigningTableScreenHandler extends ScreenHandler {
 
     public SigningTableScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(3)
+                new ArrayPropertyDelegate(16)
                 );
     }
 
@@ -82,8 +82,8 @@ public class SigningTableScreenHandler extends ScreenHandler {
         return newStack;
     }
 
-    public boolean isCrafting() {
-        return propertyDelegate.get(0) > 0;
+    public int whiteLevel() {
+        return this.propertyDelegate.get(0);
     }
 
 

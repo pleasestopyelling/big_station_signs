@@ -29,23 +29,30 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
         int x = (width - backgroundWidth)/2;
         int y = (height - backgroundHeight)/2;
         context.drawTexture(TEXTURE,x,y,0,0,backgroundWidth,backgroundHeight);
+
+        int paletteStartX = x+130;
+        int paletteStartY = y+10;
+
+        context.drawTexture(TEXTURE, x + 85, y + 30, 176, 0, 8, handler.whiteLevel()*25/1000
+                 );
+        context.drawText(textRenderer, "white dye is at " + handler.whiteLevel(), x+10, y+30, 0xFF0000, false);
+        for (int dyeId = 0; dyeId < 8; dyeId++) {
+            context.drawText(textRenderer, Integer.toString(dyeId), paletteStartX, paletteStartY + (dyeId*10), 0x3F3F3F, false);
+        }
+        for (int dyeId = 8; dyeId <16; dyeId++) {
+            context.drawText(textRenderer, Integer.toString(dyeId), x+170, y+10 + (dyeId * 10), 0x3F3F3F, false);
+        }
     }
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         renderBackground(context);
-        for (int dyeId = 0; dyeId < 16; dyeId++) {
-            context.drawText(this.textRenderer, Integer.toString(dyeId), x, y + (5*dyeId), 0x3F3F3F, false);
-        }
         super.render(context, mouseX, mouseY, delta);
         drawMouseoverTooltip(context, mouseX, mouseY);
     }
 
 
 
-    private void renderDyeLevel(DrawContext context, int x, int y, int dyeId) {
 
-
-    }
 
 }

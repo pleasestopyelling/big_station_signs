@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "a": [],
+    "c": {
+      "item": "minecraft:crafting_table"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "s": {
+      "item": "minecraft:ink_sac"
+    }
+  },
+  "pattern": [
+    "asa",
+    "ici",
+    "aia"
+  ],
+  "result": {
+    "item": "big-station-signs:signing_table"
+  },
+  "show_notification": true
+}
