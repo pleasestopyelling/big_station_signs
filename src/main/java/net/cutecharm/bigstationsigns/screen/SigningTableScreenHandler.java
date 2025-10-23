@@ -85,6 +85,51 @@ public class SigningTableScreenHandler extends ScreenHandler {
     public int whiteLevel() {
         return this.propertyDelegate.get(0);
     }
+    public int lightGrayLevel() {
+        return this.propertyDelegate.get(1);
+    }
+    public int grayLevel() {
+        return this.propertyDelegate.get(2);
+    }
+    public int blackLevel() {
+        return this.propertyDelegate.get(3);
+    }
+    public int brownLevel() {
+        return this.propertyDelegate.get(4);
+    }
+    public int redLevel() {
+        return this.propertyDelegate.get(5);
+    }
+    public int orangeLevel() {
+        return this.propertyDelegate.get(6);
+    }
+    public int yellowLevel() {
+        return this.propertyDelegate.get(7);
+    }
+    public int limeLevel() {
+        return this.propertyDelegate.get(8);
+    }
+    public int greenLevel() {
+        return this.propertyDelegate.get(9);
+    }
+    public int cyanLevel() {
+        return this.propertyDelegate.get(10);
+    }
+    public int lightBlueLevel() {
+        return this.propertyDelegate.get(11);
+    }
+    public int blueLevel() {
+        return this.propertyDelegate.get(12);
+    }
+    public int purpleLevel() {
+        return this.propertyDelegate.get(13);
+    }
+    public int magentaLevel() {
+        return this.propertyDelegate.get(14);
+    }
+    public int pinkLevel() {
+        return this.propertyDelegate.get(15);
+    }
 
 
     @Override
