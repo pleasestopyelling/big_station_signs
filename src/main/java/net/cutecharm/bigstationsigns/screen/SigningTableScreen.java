@@ -5,6 +5,8 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.client.gui.widget.CheckboxWidget;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
@@ -14,11 +16,34 @@ import net.minecraft.util.Identifier;
 public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler> {
 
     private static final Identifier TEXTURE = new Identifier(BigStationSigns.MOD_ID, "textures/gui/signing_table.png");
-
-
+    private ButtonWidget doneButton;
+    private ButtonWidget leftButton;
+    private ButtonWidget rightButton;
 
     public SigningTableScreen(SigningTableScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+        doneButton = ButtonWidget.builder(Text.translatable("screentext.paint"),
+                button -> {
+            handler.toggleSigningTableDone();
+                }).dimensions(163, 92, 60, 20)
+                .build();
+        addDrawableChild(doneButton);
+        leftButton = ButtonWidget.builder(Text.literal("←"),
+                button -> {
+
+                }).dimensions(163, 70, 10, 10)
+                .build();
+        addDrawableChild(leftButton);
+        rightButton = ButtonWidget.builder(Text.literal("→"),
+                button -> {
+                }).dimensions(213, 70, 10, 10)
+                .build();
+        addDrawableChild(rightButton);
     }
 
     @Override

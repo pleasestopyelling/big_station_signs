@@ -57,5 +57,6 @@
   "screentext.check_bold": "Bold",
   "screentext.check_italic": "Italic",
   "screentext.check_underline": "Underline",
-  "screentext.done_button": "Save and Close"
+  "screentext.done_button": "Save and Close",
+  "screentext.paint": "Paint!"
 }

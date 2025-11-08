@@ -24,8 +24,16 @@ public class SigningTableScreenHandler extends ScreenHandler {
                 );
     }
 
+    public boolean signingTableDone = false;
     public int getDyeLevel(int dyeId) {
         return propertyDelegate.get(dyeId);
+    }
+
+    public boolean getSigningTableDone() {
+        return this.signingTableDone;
+    }
+    public void toggleSigningTableDone() {
+        this.signingTableDone = !this.signingTableDone;
     }
 
     public SigningTableScreenHandler(int syncId, PlayerInventory inventory, BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {

@@ -9,6 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.DyeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -192,11 +193,10 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
 
         Item dyeItem = this.getStack(DYE_SLOT).getItem();
         int inputAmount = this.getStack(SIGN_SLOT).getCount();
-        if(itemIsDye(dyeItem)) {
+        if(dyeItem instanceof DyeItem) {
             if(dyeNotFull(dyeItem)) {
                 this.increaseDyeLevel(dyeItem);
                 markDirty(world,pos,state);
-                BigStationSigns.LOGGER.info("youre experiencing le buggg");
 
                 }
             }
@@ -384,24 +384,7 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
     }
 
 
-    private boolean itemIsDye(Item dyeItem) {
-        return (dyeItem == Items.WHITE_DYE) ||
-                (dyeItem == Items.LIGHT_GRAY_DYE) ||
-                (dyeItem == Items.GRAY_DYE) ||
-                (dyeItem == Items.BLACK_DYE) ||
-                (dyeItem == Items.BROWN_DYE) ||
-                (dyeItem == Items.RED_DYE) ||
-                (dyeItem == Items.ORANGE_DYE) ||
-                (dyeItem == Items.YELLOW_DYE) ||
-                (dyeItem == Items.LIME_DYE) ||
-                (dyeItem == Items.GREEN_DYE) ||
-                (dyeItem == Items.CYAN_DYE) ||
-                (dyeItem == Items.BLUE_DYE) ||
-                (dyeItem == Items.LIGHT_BLUE_DYE) ||
-                (dyeItem == Items.PURPLE_DYE) ||
-                (dyeItem == Items.MAGENTA_DYE) ||
-                (dyeItem == Items.PINK_DYE);
-    }
+
 
     private boolean dyeNotFull(Item dyeItem) {
         if (dyeItem == Items.WHITE_DYE)  {
