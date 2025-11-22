@@ -3,12 +3,17 @@ package net.cutecharm.bigstationsigns.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.cutecharm.bigstationsigns.BigStationSigns;
+import net.cutecharm.bigstationsigns.network.NetworkingConstants;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.CheckboxWidget;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -19,7 +24,7 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
     private ButtonWidget doneButton;
     private ButtonWidget leftButton;
     private ButtonWidget rightButton;
-
+    private boolean tab = true;
     public SigningTableScreen(SigningTableScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
@@ -27,23 +32,27 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
     @Override
     protected void init() {
         super.init();
-        doneButton = ButtonWidget.builder(Text.translatable("screentext.paint"),
-                button -> {
-            handler.toggleSigningTableDone();
-                }).dimensions(163, 92, 60, 20)
-                .build();
-        addDrawableChild(doneButton);
-        leftButton = ButtonWidget.builder(Text.literal("←"),
-                button -> {
+        if (tab) {
+            doneButton = ButtonWidget.builder(Text.translatable("screentext.paint"),
+                            button -> {
+                                handler.toggleSigningTableDone();
+                                sendCraftRequest();
+                                BigStationSigns.LOGGER.info("Craft button clicked");
+                            }).dimensions(163, 92, 60, 20)
+                    .build();
+            addDrawableChild(doneButton);
+            leftButton = ButtonWidget.builder(Text.literal("←"),
+                            button -> {
 
-                }).dimensions(163, 70, 10, 10)
-                .build();
-        addDrawableChild(leftButton);
-        rightButton = ButtonWidget.builder(Text.literal("→"),
-                button -> {
-                }).dimensions(213, 70, 10, 10)
-                .build();
-        addDrawableChild(rightButton);
+                            }).dimensions(163, 70, 10, 10)
+                    .build();
+            addDrawableChild(leftButton);
+            rightButton = ButtonWidget.builder(Text.literal("→"),
+                            button -> {
+                            }).dimensions(213, 70, 10, 10)
+                    .build();
+            addDrawableChild(rightButton);
+        }
     }
 
     @Override
@@ -81,7 +90,15 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
         drawMouseoverTooltip(context, mouseX, mouseY);
     }
 
-
+    private void sendCraftRequest() {
+        boolean sendCraft = true;
+        BlockEntity blockEntity = handler.blockEntity;
+        PacketByteBuf buf = PacketByteBufs.create();
+        buf.writeBoolean(sendCraft);
+        buf.writeBlockPos(blockEntity.getPos());
+        ClientPlayNetworking.send(NetworkingConstants.SIGNING_TABLE_PACKET_ID, buf);
+        BigStationSigns.LOGGER.info("packet sent!");
+    }
 
 
 

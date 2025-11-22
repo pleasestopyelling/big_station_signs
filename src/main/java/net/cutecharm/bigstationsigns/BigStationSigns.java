@@ -3,6 +3,7 @@ package net.cutecharm.bigstationsigns;
 import net.cutecharm.bigstationsigns.block.ModBlocks;
 import net.cutecharm.bigstationsigns.block.entity.BigStationSignBlockEntity;
 import net.cutecharm.bigstationsigns.block.entity.ModBlockEntities;
+import net.cutecharm.bigstationsigns.block.entity.SigningTableBlockEntity;
 import net.cutecharm.bigstationsigns.item.ModItemGroups;
 import net.cutecharm.bigstationsigns.item.ModItems;
 import net.cutecharm.bigstationsigns.network.NetworkingConstants;
@@ -57,35 +58,48 @@ public class BigStationSigns implements ModInitializer {
 		ModScreenHandlers.registerScreenHandlers();
 
 
-
-
 		//networking
 		ServerPlayNetworking.registerGlobalReceiver(NetworkingConstants.BIG_STATION_SIGN_PACKET_ID,
 				(server, player, handler, buf, responseSender) -> {
-			String signMessage = buf.readString();
-			Boolean signMessageBold = buf.readBoolean();
-			Boolean signMessageItalic = buf.readBoolean();
-			Boolean signMessageUnderline = buf.readBoolean();
-			int colorNumber = buf.readInt();
-			BlockPos pos = buf.readBlockPos();
-			server.execute(() -> {
-				ServerWorld world = player.getServerWorld();
-				BlockEntity blockEntity = world.getBlockEntity(pos);
-				BlockState state = world.getBlockState(pos);
-				if (!(blockEntity instanceof BigStationSignBlockEntity)) return;
-				((BigStationSignBlockEntity) blockEntity).setSignMessage(signMessage);
-				((BigStationSignBlockEntity) blockEntity).setSignBold(signMessageBold);
-				((BigStationSignBlockEntity) blockEntity).setSignItalic(signMessageItalic);
-				((BigStationSignBlockEntity) blockEntity).setSignUnderline(signMessageUnderline);
-				((BigStationSignBlockEntity) blockEntity).setSignColor(colorNumber);
-				blockEntity.markDirty();
-				world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
-			});
+					String signMessage = buf.readString();
+					Boolean signMessageBold = buf.readBoolean();
+					Boolean signMessageItalic = buf.readBoolean();
+					Boolean signMessageUnderline = buf.readBoolean();
+					int colorNumber = buf.readInt();
+					BlockPos pos = buf.readBlockPos();
+					server.execute(() -> {
+						ServerWorld world = player.getServerWorld();
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						BlockState state = world.getBlockState(pos);
+						if (!(blockEntity instanceof BigStationSignBlockEntity)) return;
+						((BigStationSignBlockEntity) blockEntity).setSignMessage(signMessage);
+						((BigStationSignBlockEntity) blockEntity).setSignBold(signMessageBold);
+						((BigStationSignBlockEntity) blockEntity).setSignItalic(signMessageItalic);
+						((BigStationSignBlockEntity) blockEntity).setSignUnderline(signMessageUnderline);
+						((BigStationSignBlockEntity) blockEntity).setSignColor(colorNumber);
+						blockEntity.markDirty();
+						world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
+					});
 
-		});
+				});
+
+		ServerPlayNetworking.registerGlobalReceiver(NetworkingConstants.SIGNING_TABLE_PACKET_ID,
+				(server, player, handler, buf, responseSender) -> {
+
+					boolean craftRequest = buf.readBoolean();
+					BlockPos pos = buf.readBlockPos();
+					server.execute(() -> {
+						ServerWorld world = player.getServerWorld();
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						BlockState state = world.getBlockState(pos);
+						if (!(blockEntity instanceof SigningTableBlockEntity)) return;
+						((SigningTableBlockEntity) blockEntity).setSigningCraftTask(craftRequest);
+						LOGGER.info("packet received!");
+						blockEntity.markDirty();
+						world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
 
 
+					});
+				});
+	}}
 
-
-	}
-}

@@ -9,12 +9,16 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.Inventories;
 import net.minecraft.item.DyeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -106,12 +110,16 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
 
     }
 
-
-
+    @Override
+    public void markDirty() {
+        world.updateListeners(pos, getCachedState(), getCachedState(), 3);
+        super.markDirty();
+    }
 
     //ENN BEE TEE
     @Override
     protected void writeNbt(NbtCompound nbt) {
+        Inventories.writeNbt(nbt, inventory);
         nbt.putInt("white",whiteDyeLevel);
         nbt.putInt("light_gray",lightGrayDyeLevel);
         nbt.putInt("gray",grayDyeLevel);
@@ -133,6 +141,7 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
 
     @Override
     public void readNbt(NbtCompound nbt) {
+        Inventories.readNbt(nbt, inventory);
         whiteDyeLevel = nbt.getInt("white");
         lightGrayDyeLevel = nbt.getInt("light_gray");
         grayDyeLevel = nbt.getInt("gray");
@@ -182,39 +191,48 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
 
     @Override
     public DefaultedList<ItemStack> getItems() {
-
         return inventory;
     }
 
+    public void setSigningCraftTask(boolean task) {
+        signingCraftTask = task;
+    }
     public void tick(World world, BlockPos pos, BlockState state) {
-        if(world.isClient) {
+        if (world.isClient) {
             return;
         }
-
         Item dyeItem = this.getStack(DYE_SLOT).getItem();
-        int inputAmount = this.getStack(SIGN_SLOT).getCount();
-        if(dyeItem instanceof DyeItem) {
-            if(dyeNotFull(dyeItem)) {
+        if (dyeItem instanceof DyeItem) {
+            if (dyeNotFull(dyeItem)) {
                 this.increaseDyeLevel(dyeItem);
-                markDirty(world,pos,state);
-
-                }
+                markDirty(world, pos, state);
             }
-        if(signingCraftTask == true) {
-            if(ingredientsPresent(inputAmount)) {
+        }
+        BigStationSigns.LOGGER.info("at the block entity, the signingcrafttask is" + signingCraftTask);
+        if (signingCraftTask) {
+            BigStationSigns.LOGGER.info("Item in sign slot is " + this.getStack(SIGN_SLOT));
+            int inputAmount = this.getStack(SIGN_SLOT).getCount();
+            BigStationSigns.LOGGER.info("signingcrafttask " + signingCraftTask);
+            BigStationSigns.LOGGER.info("block entity received craft " + signingCraftTask);
+            BigStationSigns.LOGGER.info("the craft is starting " + signingCraftTask);
+            if (ingredientsPresent(inputAmount)) {
                 this.decreaseDyeLevel(inputAmount);
                 this.outputItem(inputAmount);
-                markDirty(world,pos,state);
-            }
-            else {
+                BigStationSigns.LOGGER.info("the craft is being completed " + redDyeLevel);
+                signingCraftTask = false;
+            } else {
                 signingCraftTask = false;
             }
+            markDirty(world,pos,state);
+
         }
         //leaving the water slot clear for now, will add that later
     }
 
+
+
     private void outputItem(int count) {
-        this.getStack(SIGN_SLOT).setCount(0);
+        setStack(SIGN_SLOT, ItemStack.EMPTY);
         if (signingTablePreset == 1) {
             this.setStack(SIGN_SLOT, new ItemStack(ModBlocks.LIGHT_GRAY_BIG_STATION_SIGN.asItem(), count));
         } else if (signingTablePreset == 2) {
@@ -250,7 +268,7 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
         } else if (signingTablePreset == 17) {
             this.setStack(SIGN_SLOT, new ItemStack(ModBlocks.BLUE_BIG_STATION_SIGN.asItem(), count));
         } else {
-            this.setStack(SIGN_SLOT, new ItemStack(ModBlocks.WHITE_BIG_STATION_SIGN.asItem(), count));
+            setStack(SIGN_SLOT, new ItemStack(ModBlocks.WHITE_BIG_STATION_SIGN.asItem(), count));
         }
     }
 
@@ -318,8 +336,10 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
             lightBlueDyeLevel -= (5* count);
         } else {
             redDyeLevel -= (10*count);
+
             //national rail
         }
+
     }
 
     private boolean ingredientsPresent(int count) {
@@ -494,6 +514,10 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
     }
 
 
+    @Override
+    public @Nullable Packet<ClientPlayPacketListener> toUpdatePacket() {
+        return BlockEntityUpdateS2CPacket.create(this);
+    }
 
 }
 //things i want this block to do:
