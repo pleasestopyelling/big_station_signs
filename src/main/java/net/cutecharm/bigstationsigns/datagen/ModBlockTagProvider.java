@@ -35,8 +35,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LIGHT_BLUE_BIG_STATION_SIGN)
                 .add(ModBlocks.BLUE_BIG_STATION_SIGN)
                 .add(ModBlocks.PURPLE_BIG_STATION_SIGN)
+                .add(ModBlocks.PURPLE_BIG_STATION_SIGN_B)
                 .add(ModBlocks.MAGENTA_BIG_STATION_SIGN)
-                .add(ModBlocks.PINK_BIG_STATION_SIGN);
+                .add(ModBlocks.PINK_BIG_STATION_SIGN)
+                .add(ModBlocks.CERULEAN_BIG_STATION_SIGN);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.OAK_BIG_STATION_SIGN)

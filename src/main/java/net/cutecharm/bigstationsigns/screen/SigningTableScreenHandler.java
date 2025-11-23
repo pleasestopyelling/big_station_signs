@@ -1,7 +1,6 @@
 package net.cutecharm.bigstationsigns.screen;
 
 import net.cutecharm.bigstationsigns.BigStationSigns;
-import net.cutecharm.bigstationsigns.block.ModBlocks;
 import net.cutecharm.bigstationsigns.block.entity.SigningTableBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -27,19 +26,19 @@ public class SigningTableScreenHandler extends ScreenHandler {
     }
 
     public boolean signingTableCrafting = false;
-    public int getDyeLevel(int dyeId) {
-        return propertyDelegate.get(dyeId);
-    }
-
-    public boolean getSigningTableDone() {
-        return this.signingTableCrafting;
-    }
-    public void toggleSigningTableDone() {
-        this.signingTableCrafting = !this.signingTableCrafting;
-        propertyDelegate.set(16,1);
-        BigStationSigns.LOGGER.info("Handler received craft" + propertyDelegate.get(16));
-
-    }
+//    public int getDyeLevel(int dyeId) {
+//        return propertyDelegate.get(dyeId);
+//    }
+//
+//    public boolean getSigningTableDone() {
+//        return this.signingTableCrafting;
+//    }
+//    public void toggleSigningTableDone() {
+//        this.signingTableCrafting = !this.signingTableCrafting;
+//        propertyDelegate.set(16,1);
+//        BigStationSigns.LOGGER.info("Handler received craft" + propertyDelegate.get(16));
+//
+//    }
 
     public SigningTableScreenHandler(int syncId, PlayerInventory inventory, BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
         super(ModScreenHandlers.SIGNING_TABLE_SCREEN_HANDLER, syncId);
@@ -142,6 +141,9 @@ public class SigningTableScreenHandler extends ScreenHandler {
     }
     public int pinkLevel() {
         return this.propertyDelegate.get(15);
+    }
+    public int preset() {
+        return this.propertyDelegate.get(16);
     }
 
     @Override

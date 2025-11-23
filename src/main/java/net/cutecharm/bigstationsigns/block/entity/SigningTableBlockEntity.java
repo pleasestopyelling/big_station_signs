@@ -2,7 +2,6 @@ package net.cutecharm.bigstationsigns.block.entity;
 
 import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.cutecharm.bigstationsigns.block.ModBlocks;
-import net.cutecharm.bigstationsigns.item.ModItems;
 import net.cutecharm.bigstationsigns.screen.SigningTableScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
@@ -22,8 +21,9 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -75,6 +75,7 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
                     case 13 -> SigningTableBlockEntity.this.purpleDyeLevel;
                     case 14 -> SigningTableBlockEntity.this.magentaDyeLevel;
                     case 15 -> SigningTableBlockEntity.this.pinkDyeLevel;
+                    case 16 -> SigningTableBlockEntity.this.signingTablePreset;
                     default -> 0;
                 };
             }
@@ -98,13 +99,14 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
                     case 13 -> SigningTableBlockEntity.this.purpleDyeLevel = value;
                     case 14 -> SigningTableBlockEntity.this.magentaDyeLevel = value;
                     case 15 -> SigningTableBlockEntity.this.pinkDyeLevel = value;
+                    case 16 -> SigningTableBlockEntity.this.signingTablePreset = value;
                 }
 
             }
 
             @Override
             public int size() {
-                return 16;
+                return 17;
             }
         };
 
@@ -194,9 +196,6 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
         return inventory;
     }
 
-    public void setSigningCraftTask(boolean task) {
-        signingCraftTask = task;
-    }
     public void tick(World world, BlockPos pos, BlockState state) {
         if (world.isClient) {
             return;
@@ -207,29 +206,32 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
                 this.increaseDyeLevel(dyeItem);
                 markDirty(world, pos, state);
             }
-        }
-        BigStationSigns.LOGGER.info("at the block entity, the signingcrafttask is" + signingCraftTask);
-        if (signingCraftTask) {
-            BigStationSigns.LOGGER.info("Item in sign slot is " + this.getStack(SIGN_SLOT));
-            int inputAmount = this.getStack(SIGN_SLOT).getCount();
-            BigStationSigns.LOGGER.info("signingcrafttask " + signingCraftTask);
-            BigStationSigns.LOGGER.info("block entity received craft " + signingCraftTask);
-            BigStationSigns.LOGGER.info("the craft is starting " + signingCraftTask);
-            if (ingredientsPresent(inputAmount)) {
-                this.decreaseDyeLevel(inputAmount);
-                this.outputItem(inputAmount);
-                BigStationSigns.LOGGER.info("the craft is being completed " + redDyeLevel);
-                signingCraftTask = false;
-            } else {
-                signingCraftTask = false;
-            }
-            markDirty(world,pos,state);
 
         }
         //leaving the water slot clear for now, will add that later
     }
 
+    public void executeCraft() {
+        int inputAmount = this.getStack(SIGN_SLOT).getCount();
+        if (ingredientsPresent(inputAmount)) {
+            this.decreaseDyeLevel(inputAmount);
+            this.outputItem(inputAmount);
+            world.playSound(null, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+        } else {
+            world.playSound(null, pos, SoundEvents.BLOCK_LODESTONE_HIT, SoundCategory.BLOCKS, 1.0F, 1.0F);
+        }
+        markDirty();
+        }
 
+        public void changePreset(int change) {
+        signingTablePreset = signingTablePreset+change;
+        if (signingTablePreset > 17) {
+            signingTablePreset = 0;
+        } else if (signingTablePreset < 0) {
+            signingTablePreset = 17;
+            }
+        world.playSound(null, pos, SoundEvents.UI_LOOM_SELECT_PATTERN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+        }
 
     private void outputItem(int count) {
         setStack(SIGN_SLOT, ItemStack.EMPTY);
@@ -336,7 +338,6 @@ public class SigningTableBlockEntity extends BlockEntity implements ExtendedScre
             lightBlueDyeLevel -= (5* count);
         } else {
             redDyeLevel -= (10*count);
-
             //national rail
         }
 

@@ -85,21 +85,40 @@ public class BigStationSigns implements ModInitializer {
 
 		ServerPlayNetworking.registerGlobalReceiver(NetworkingConstants.SIGNING_TABLE_PACKET_ID,
 				(server, player, handler, buf, responseSender) -> {
-
-					boolean craftRequest = buf.readBoolean();
 					BlockPos pos = buf.readBlockPos();
 					server.execute(() -> {
 						ServerWorld world = player.getServerWorld();
 						BlockEntity blockEntity = world.getBlockEntity(pos);
 						BlockState state = world.getBlockState(pos);
 						if (!(blockEntity instanceof SigningTableBlockEntity)) return;
-						((SigningTableBlockEntity) blockEntity).setSigningCraftTask(craftRequest);
-						LOGGER.info("packet received!");
-						blockEntity.markDirty();
+						((SigningTableBlockEntity) blockEntity).executeCraft();
 						world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
-
-
 					});
 				});
-	}}
+		ServerPlayNetworking.registerGlobalReceiver(NetworkingConstants.SIGNING_TABLE_L_PACKET_ID,
+				(server, player, handler, buf, responseSender) -> {
+					BlockPos pos = buf.readBlockPos();
+					server.execute(() -> {
+						ServerWorld world = player.getServerWorld();
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						BlockState state = world.getBlockState(pos);
+						if (!(blockEntity instanceof SigningTableBlockEntity)) return;
+						((SigningTableBlockEntity) blockEntity).changePreset(-1);
+						world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
+					});
+				});
+		ServerPlayNetworking.registerGlobalReceiver(NetworkingConstants.SIGNING_TABLE_R_PACKET_ID,
+				(server, player, handler, buf, responseSender) -> {
+					BlockPos pos = buf.readBlockPos();
+					server.execute(() -> {
+						ServerWorld world = player.getServerWorld();
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						BlockState state = world.getBlockState(pos);
+						if (!(blockEntity instanceof SigningTableBlockEntity)) return;
+						((SigningTableBlockEntity) blockEntity).changePreset(1);
+						world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
+					});
+				});
+	}
+}
 
