@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "big-station-signs:signing_table",
     "big-station-signs:oak_big_sign",
     "big-station-signs:birch_big_sign",
     "big-station-signs:jungle_big_sign",
@@ -12,6 +11,7 @@
     "big-station-signs:crimson_big_sign",
     "big-station-signs:warped_big_sign",
     "big-station-signs:cherry_big_sign",
-    "big-station-signs:mangrove_big_sign"
+    "big-station-signs:mangrove_big_sign",
+    "big-station-signs:signing_table"
   ]
 }
