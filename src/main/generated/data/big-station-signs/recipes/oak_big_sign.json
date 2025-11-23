@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:oak_log"
+    },
+    "i": {
+      "item": "minecraft:oak_planks"
+    },
+    "s": {
+      "item": "minecraft:oak_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:oak_big_sign"
+  },
+  "show_notification": true
+}

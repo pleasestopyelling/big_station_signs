@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:spruce_log"
+    },
+    "i": {
+      "item": "minecraft:spruce_planks"
+    },
+    "s": {
+      "item": "minecraft:spruce_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:spruce_big_sign"
+  },
+  "show_notification": true
+}

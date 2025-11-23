@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:mangrove_log"
+    },
+    "i": {
+      "item": "minecraft:mangrove_planks"
+    },
+    "s": {
+      "item": "minecraft:mangrove_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:mangrove_big_sign"
+  },
+  "show_notification": true
+}

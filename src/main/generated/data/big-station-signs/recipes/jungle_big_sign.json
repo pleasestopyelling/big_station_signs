@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:jungle_log"
+    },
+    "i": {
+      "item": "minecraft:jungle_planks"
+    },
+    "s": {
+      "item": "minecraft:jungle_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:jungle_big_sign"
+  },
+  "show_notification": true
+}

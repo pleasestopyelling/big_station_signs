@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:acacia_log"
+    },
+    "i": {
+      "item": "minecraft:acacia_planks"
+    },
+    "s": {
+      "item": "minecraft:acacia_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:acacia_big_sign"
+  },
+  "show_notification": true
+}

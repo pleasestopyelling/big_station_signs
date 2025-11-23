@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "minecraft:bamboo_block"
+    },
+    "i": {
+      "item": "minecraft:bamboo_planks"
+    },
+    "s": {
+      "item": "minecraft:bamboo_sign"
+    }
+  },
+  "pattern": [
+    "idi",
+    "isi",
+    "iii"
+  ],
+  "result": {
+    "count": 12,
+    "item": "big-station-signs:bamboo_big_sign"
+  },
+  "show_notification": true
+}
