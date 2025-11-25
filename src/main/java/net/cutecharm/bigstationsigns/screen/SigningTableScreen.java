@@ -21,10 +21,7 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
 
     private static final Identifier TEXTURE = new Identifier(BigStationSigns.MOD_ID, "textures/gui/signing_table.png");
     private static final Identifier PRESETS = new Identifier(BigStationSigns.MOD_ID, "textures/gui/presets.png");
-    private ButtonWidget doneButton;
-    private ButtonWidget leftButton;
-    private ButtonWidget rightButton;
-    private boolean tab = true;
+
     public SigningTableScreen(SigningTableScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
@@ -33,10 +30,13 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
     @Override
     protected void init() {
         super.init();
+        ButtonWidget doneButton;
+        ButtonWidget leftButton;
+        ButtonWidget rightButton;
+        boolean tab = true;
         if (tab) {
             doneButton = ButtonWidget.builder(Text.translatable("screentext.paint"),
                             button -> {
-                                //handler.toggleSigningTableDone();
                                 sendRequest(NetworkingConstants.SIGNING_TABLE_PACKET_ID);
                             }).dimensions(163, 92, 60, 20)
                     .build();
