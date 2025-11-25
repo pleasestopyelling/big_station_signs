@@ -1,7 +1,7 @@
 package net.cutecharm.bigstationsigns.datagen;
 
 import net.cutecharm.bigstationsigns.block.ModBlocks;
-import net.cutecharm.bigstationsigns.tags.ModBlockTags;
+import net.cutecharm.bigstationsigns.tags.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -54,7 +54,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MANGROVE_BIG_STATION_SIGN)
                 .add(ModBlocks.SIGNING_TABLE);
 
-        getOrCreateTagBuilder(ModBlockTags.BIG_STATION_SIGNS)
+        getOrCreateTagBuilder(ModTags.BIG_STATION_SIGNS)
                 .add(ModBlocks.OAK_BIG_STATION_SIGN)
                 .add(ModBlocks.BIRCH_BIG_STATION_SIGN)
                 .add(ModBlocks.JUNGLE_BIG_STATION_SIGN)

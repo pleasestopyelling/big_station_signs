@@ -1,12 +1,14 @@
 package net.cutecharm.bigstationsigns.screen;
 
-import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.cutecharm.bigstationsigns.block.entity.SigningTableBlockEntity;
+import net.cutecharm.bigstationsigns.tags.ModTags;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.item.DyeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
@@ -25,7 +27,7 @@ public class SigningTableScreenHandler extends ScreenHandler {
                 );
     }
 
-    public boolean signingTableCrafting = false;
+//    public boolean signingTableCrafting = false;
 //    public int getDyeLevel(int dyeId) {
 //        return propertyDelegate.get(dyeId);
 //    }
@@ -47,9 +49,26 @@ public class SigningTableScreenHandler extends ScreenHandler {
         inventory.onOpen(inventory.player);
         this.propertyDelegate = arrayPropertyDelegate;
         this.blockEntity = ((SigningTableBlockEntity) blockEntity);
-        this.addSlot(new Slot(this.inventory, 0, 80, 11));
-        this.addSlot(new Slot(this.inventory, 1, 80, 59));
-        this.addSlot(new Slot(this.inventory, 2, 80, 35));
+        this.addSlot(new Slot(this.inventory, 0, 80, 11){
+            @Override
+            public boolean canInsert(ItemStack stack) {
+                return stack.isIn(ModTags.PAINTABLE);
+            }
+        });
+        this.addSlot(new Slot(this.inventory, 1, 80, 59){
+            @Override
+            public boolean canInsert(ItemStack stack)  {
+                return stack.getItem() instanceof DyeItem;
+            }
+        });
+        this.addSlot(new Slot(this.inventory, 2, 80, 35){
+            @Override
+            public boolean canInsert(ItemStack stack) {
+                return stack.isOf(Items.WATER_BUCKET);
+            }
+        }
+
+        );
 
         addPlayerInventory(inventory);
         addPlayerHotbar(inventory);
