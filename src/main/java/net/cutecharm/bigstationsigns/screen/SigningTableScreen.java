@@ -127,6 +127,7 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
             case 14 -> {return 130;}
             case 15 -> {return 156;}
             case 16 -> {return 182;}
+            case 17 -> {return 208;}
             case 0 -> {return 0;}
             default -> {return 0;}
         }
