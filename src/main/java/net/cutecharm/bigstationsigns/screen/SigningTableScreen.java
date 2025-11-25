@@ -22,6 +22,7 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
     private static final Identifier TEXTURE = new Identifier(BigStationSigns.MOD_ID, "textures/gui/signing_table.png");
     private static final Identifier PRESETS = new Identifier(BigStationSigns.MOD_ID, "textures/gui/presets.png");
 
+
     public SigningTableScreen(SigningTableScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
@@ -38,19 +39,19 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
             doneButton = ButtonWidget.builder(Text.translatable("screentext.paint"),
                             button -> {
                                 sendRequest(NetworkingConstants.SIGNING_TABLE_PACKET_ID);
-                            }).dimensions(163, 92, 60, 20)
+                            }).dimensions(x+10, y+50, 60, 20)
                     .build();
             addDrawableChild(doneButton);
             leftButton = ButtonWidget.builder(Text.literal("←"),
                             button -> {
                             sendRequest(NetworkingConstants.SIGNING_TABLE_L_PACKET_ID);
-                            }).dimensions(163, 70, 10, 10)
+                            }).dimensions(x+10, y+28, 10, 10)
                     .build();
             addDrawableChild(leftButton);
             rightButton = ButtonWidget.builder(Text.literal("→"),
                             button -> {
                             sendRequest(NetworkingConstants.SIGNING_TABLE_R_PACKET_ID);
-                            }).dimensions(213, 70, 10, 10)
+                            }).dimensions(x+60, y+28, 10, 10)
                     .build();
             addDrawableChild(rightButton);
         }
@@ -61,13 +62,12 @@ public class SigningTableScreen extends HandledScreen<SigningTableScreenHandler>
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1f,1f,1f,1f);
         RenderSystem.setShaderTexture(0,TEXTURE);
+        context.drawTexture(TEXTURE,x,y,0,0,backgroundWidth,backgroundHeight);
         int x = (width - backgroundWidth)/2;
         int y = (height - backgroundHeight)/2;
-        context.drawTexture(TEXTURE,x,y,0,0,backgroundWidth,backgroundHeight);
-
         //render the preset
 
-        context.drawTexture(PRESETS, x+24, y+20, presetX(handler.preset()), presetY(handler.preset()), 34, 26);
+        context.drawTexture(PRESETS, x+23, y+20, presetX(handler.preset()), presetY(handler.preset()), 34, 26);
 
         //render the palette
         context.drawTexture(TEXTURE, x + 109, y + 11, 176, 0, 10, handler.whiteLevel()*10/1000);
