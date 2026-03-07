@@ -1,5 +1,6 @@
 package net.cutecharm.bigstationsigns.block;
 
+import net.cutecharm.bigstationsigns.BigStationSigns;
 import net.cutecharm.bigstationsigns.block.entity.BigStationSignBlockEntity;
 import net.cutecharm.bigstationsigns.screen.BigStationSignScreen;
 import net.minecraft.block.*;
@@ -49,18 +50,21 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
         return BlockRenderType.MODEL;
     }
 
+
     //selection outline of the block (it is non collidable)
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction direction = state.get(FACING);
         return switch(direction) {
-            case NORTH -> Block.createCuboidShape(0,1,14,16,15,16);
-            case EAST -> Block.createCuboidShape(0,1,0,2,15,16);
-            case SOUTH -> Block.createCuboidShape(0,1,0,16,15,2);
-            case WEST -> Block.createCuboidShape(14,1,0,16,15,16);
+            case NORTH -> Block.createCuboidShape(0,0,14,16,16,16);
+            case EAST -> Block.createCuboidShape(0,0,0,2,16,16);
+            case SOUTH -> Block.createCuboidShape(0,0,0,16,16,2);
+            case WEST -> Block.createCuboidShape(14,0,0,16,16,16);
             default -> VoxelShapes.fullCube();
         };
+
     }
+
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
@@ -115,7 +119,6 @@ public class GrayBigStationSign extends HorizontalFacingBlock implements BlockEn
         blockEntity.markDirty();
 
     }
-
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
